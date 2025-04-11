@@ -16,8 +16,7 @@ public class Main {
              dočasných boostů. V pozdější fázi hry se zpřístupní prestige systém, který umožní hráči resetovat
              svůj postup výměnou za speciální měnu. Ta poskytuje trvalé vylepšení příjmů a další výhody.
          */
-
-
+        new Menu();
 
 
     }

@@ -1,52 +1,53 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Menu extends JPanel implements ActionListener {
+public class Settings extends JPanel implements ActionListener {
+
     public int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 720;
 
-    private JFrame window;
     private JPanel panel;
+    private JFrame window;
+    private JButton menu;
     private JButton play;
     private JButton quit;
-    private JButton settings;
     private ImageIcon icon = new ImageIcon("Icon.png");
 
-    public Menu() {
-        createMenu();
+    public Settings() {
+        createWindow();
     }
 
-    public void createMenu(){
+    public void createWindow() {
+        menu = new JButton("Menu");
+        menu.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT-100, 200, 40);
+        menu.setBackground(Color.WHITE);
+        menu.addActionListener(this);
+        menu.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        menu.setHorizontalTextPosition(JButton.CENTER);
+
         play = new JButton("Play");
-        play.setBounds(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+50, 200, 40);
+        play.setBounds(SCREEN_WIDTH/2-100, SCREEN_HEIGHT-100, 200, 40);
         play.setBackground(Color.WHITE);
         play.addActionListener(this);
         play.setFont(new Font("Arial Black", Font.PLAIN, 20));
         play.setHorizontalTextPosition(JButton.CENTER);
 
         quit = new JButton("Quit");
-        quit.setBounds(SCREEN_WIDTH/2-350, SCREEN_HEIGHT/2+50, 200, 40);
+        quit.setBounds(SCREEN_WIDTH/2-350, SCREEN_HEIGHT-100, 200, 40);
         quit.setBackground(Color.WHITE);
         quit.addActionListener(this);
         quit.setFont(new Font("Arial Black", Font.PLAIN, 20));
         quit.setHorizontalTextPosition(JButton.CENTER);
 
-        settings = new JButton("Settings");
-        settings.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT/2+50, 200, 40);
-        settings.setBackground(Color.WHITE);
-        settings.addActionListener(this);
-        settings.setFont(new Font("Arial Black", Font.PLAIN, 20));
-        settings.setHorizontalTextPosition(JButton.CENTER);
-
         panel = new JPanel();
         panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
-        panel.setBackground(Color.BLACK);
+        panel.setBackground(Color.BLUE);
         panel.setLayout(null);
+        panel.setVisible(true);
         panel.add(play);
         panel.add(quit);
-        panel.add(settings);
+        panel.add(menu);
 
         window = new JFrame("Kingdom Tycoon");
         window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
@@ -60,22 +61,6 @@ public class Menu extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == play) {
-            window.dispose();
-            new Game();
-        }
-        if (e.getSource() == quit) {
-            window.dispose();
-            System.exit(0);
-        }
-        if (e.getSource() == settings) {;
-            window.dispose();
-            new Settings();
-        }
 
     }
 }
-
-
-
-
