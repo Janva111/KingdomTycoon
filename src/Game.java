@@ -10,20 +10,29 @@ public class Game extends JPanel implements ActionListener, KeyListener{
 
     private JPanel panel;
     private JFrame window;
+    private JLabel map;
+    private GameLoop gameLoop;
 
-    private ImageIcon background = new ImageIcon("background.png");
+    private ImageIcon background = new ImageIcon("GameMap.png");
     private ImageIcon icon = new ImageIcon("Icon.png");
 
     public Game() {
         createWindow();
+        gameLoop = new GameLoop(this);
     }
 
     public void createWindow() {
+
+        map = new JLabel(background);
+        map.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
         panel = new JPanel();
         panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
-        panel.setBackground(Color.BLUE);
+        panel.setBackground(Color.white);
         panel.setLayout(null);
         panel.setVisible(true);
+
+        panel.add(map);
 
         window = new JFrame("Kingdom Tycoon");
         window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
@@ -32,7 +41,7 @@ public class Game extends JPanel implements ActionListener, KeyListener{
         window.setLocationRelativeTo(null);
         window.setVisible(true);
         window.add(panel);
-        window.setIconImage(new ImageIcon("Icon.png").getImage());
+        window.setIconImage(icon.getImage());
     }
     
     @Override
@@ -42,9 +51,6 @@ public class Game extends JPanel implements ActionListener, KeyListener{
 
     @Override
     public void keyTyped(KeyEvent e) {
-
-
-
 
     }
 
