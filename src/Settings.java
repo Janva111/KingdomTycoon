@@ -5,13 +5,15 @@ import java.awt.event.ActionListener;
 
 public class Settings extends JPanel implements ActionListener {
 
-    public int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 720;
+    public int SCREEN_WIDTH = 1024, SCREEN_HEIGHT = 800;
 
     private JPanel panel;
     private JFrame window;
     private JButton menu;
     private JButton play;
     private JButton quit;
+    private JLabel settings;
+    private ImageIcon settings_icon = new ImageIcon("settings.png");
     private ImageIcon icon = new ImageIcon("Icon.png");
 
     public Settings() {
@@ -40,6 +42,9 @@ public class Settings extends JPanel implements ActionListener {
         quit.setFont(new Font("Arial Black", Font.PLAIN, 20));
         quit.setHorizontalTextPosition(JButton.CENTER);
 
+        settings = new JLabel(settings_icon);
+        settings.setBounds(0,0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
         panel = new JPanel();
         panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
         panel.setBackground(Color.BLUE);
@@ -48,6 +53,7 @@ public class Settings extends JPanel implements ActionListener {
         panel.add(play);
         panel.add(quit);
         panel.add(menu);
+        panel.add(settings);
 
         window = new JFrame("Kingdom Tycoon");
         window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
@@ -61,6 +67,15 @@ public class Settings extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == quit) {
+            window.dispose();
+            System.exit(0);
+        }if (e.getSource() == play) {
 
+        }
+        if (e.getSource() == menu) {
+            window.dispose();
+            new Menu();
+        }
     }
 }

@@ -5,13 +5,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Menu extends JPanel implements ActionListener {
-    public int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 720;
+    public int SCREEN_WIDTH = 1024, SCREEN_HEIGHT = 800;
 
     private JFrame window;
     private JPanel panel;
     private JButton play;
     private JButton quit;
     private JButton settings;
+    private JLabel backgroundMenu;
+    private ImageIcon background = new ImageIcon("Menu.png");
     private ImageIcon icon = new ImageIcon("Icon.png");
 
     public Menu() {
@@ -20,25 +22,30 @@ public class Menu extends JPanel implements ActionListener {
 
     public void createMenu(){
         play = new JButton("Play");
-        play.setBounds(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+50, 200, 40);
+        play.setBounds(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+80, 200, 40);
         play.setBackground(Color.WHITE);
         play.addActionListener(this);
         play.setFont(new Font("Arial Black", Font.PLAIN, 20));
         play.setHorizontalTextPosition(JButton.CENTER);
 
         quit = new JButton("Quit");
-        quit.setBounds(SCREEN_WIDTH/2-350, SCREEN_HEIGHT/2+50, 200, 40);
+        quit.setBounds(SCREEN_WIDTH/2-350, SCREEN_HEIGHT/2+80, 200, 40);
         quit.setBackground(Color.WHITE);
         quit.addActionListener(this);
         quit.setFont(new Font("Arial Black", Font.PLAIN, 20));
         quit.setHorizontalTextPosition(JButton.CENTER);
 
         settings = new JButton("Settings");
-        settings.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT/2+50, 200, 40);
+        settings.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT/2+80, 200, 40);
         settings.setBackground(Color.WHITE);
         settings.addActionListener(this);
         settings.setFont(new Font("Arial Black", Font.PLAIN, 20));
         settings.setHorizontalTextPosition(JButton.CENTER);
+
+        backgroundMenu = new JLabel(background);
+        backgroundMenu.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+
 
         panel = new JPanel();
         panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -47,6 +54,7 @@ public class Menu extends JPanel implements ActionListener {
         panel.add(play);
         panel.add(quit);
         panel.add(settings);
+        panel.add(backgroundMenu);
 
         window = new JFrame("Kingdom Tycoon");
         window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
