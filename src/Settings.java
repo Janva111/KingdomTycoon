@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.Menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,6 +16,7 @@ public class Settings extends JPanel implements ActionListener {
     private JLabel settings;
     private ImageIcon settings_icon = new ImageIcon("settings.png");
     private ImageIcon icon = new ImageIcon("Icon.png");
+
 
     public Settings() {
         createWindow();
@@ -70,12 +72,13 @@ public class Settings extends JPanel implements ActionListener {
         if (e.getSource() == quit) {
             window.dispose();
             System.exit(0);
-        }if (e.getSource() == play) {
 
+        }if (e.getSource() == play) {
+            window.dispose();
+            new Game();
         }
         if (e.getSource() == menu) {
             window.dispose();
-            new Menu();
         }
     }
 }

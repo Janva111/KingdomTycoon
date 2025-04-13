@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,16 +10,16 @@ public class Menu extends JPanel implements ActionListener {
     private JPanel panel;
     private JButton play;
     private JButton quit;
-    private JButton settings;
+    private JButton settingsButton;
     private JLabel backgroundMenu;
     private ImageIcon background = new ImageIcon("Menu.png");
     private ImageIcon icon = new ImageIcon("Icon.png");
 
     public Menu() {
-        createMenu();
+        createWindow();
     }
 
-    public void createMenu(){
+    public void createWindow(){
         play = new JButton("Play");
         play.setBounds(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+80, 200, 40);
         play.setBackground(Color.WHITE);
@@ -35,17 +34,15 @@ public class Menu extends JPanel implements ActionListener {
         quit.setFont(new Font("Arial Black", Font.PLAIN, 20));
         quit.setHorizontalTextPosition(JButton.CENTER);
 
-        settings = new JButton("Settings");
-        settings.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT/2+80, 200, 40);
-        settings.setBackground(Color.WHITE);
-        settings.addActionListener(this);
-        settings.setFont(new Font("Arial Black", Font.PLAIN, 20));
-        settings.setHorizontalTextPosition(JButton.CENTER);
+        settingsButton = new JButton("Settings");
+        settingsButton.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT/2+80, 200, 40);
+        settingsButton.setBackground(Color.WHITE);
+        settingsButton.addActionListener(this);
+        settingsButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        settingsButton.setHorizontalTextPosition(JButton.CENTER);
 
         backgroundMenu = new JLabel(background);
         backgroundMenu.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-
 
         panel = new JPanel();
         panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -53,7 +50,7 @@ public class Menu extends JPanel implements ActionListener {
         panel.setLayout(null);
         panel.add(play);
         panel.add(quit);
-        panel.add(settings);
+        panel.add(settingsButton);
         panel.add(backgroundMenu);
 
         window = new JFrame("Kingdom Tycoon");
@@ -76,7 +73,7 @@ public class Menu extends JPanel implements ActionListener {
             window.dispose();
             System.exit(0);
         }
-        if (e.getSource() == settings) {;
+        if (e.getSource() == settingsButton) {;
             window.dispose();
             new Settings();
         }

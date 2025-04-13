@@ -11,14 +11,17 @@ public class Game extends JPanel implements ActionListener, KeyListener{
     private JPanel panel;
     private JFrame window;
     private JLabel map;
-    private GameLoop gameLoop;
 
     private ImageIcon background = new ImageIcon("GameMap.png");
     private ImageIcon icon = new ImageIcon("Icon.png");
 
+
     public Game() {
         createWindow();
-        gameLoop = new GameLoop(this);
+    }
+
+    public void startGame(){
+
     }
 
     public void createWindow() {
@@ -56,7 +59,6 @@ public class Game extends JPanel implements ActionListener, KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
-
     }
 
     @Override
