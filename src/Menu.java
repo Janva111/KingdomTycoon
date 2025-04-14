@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Menu extends JPanel implements ActionListener {
+public class Menu extends JFrame implements ActionListener {
     public int SCREEN_WIDTH = 1024, SCREEN_HEIGHT = 800;
 
     private JFrame window;
@@ -67,7 +67,7 @@ public class Menu extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == play) {
             window.dispose();
-            new Game();
+            new GameWindow();
         }
         if (e.getSource() == quit) {
             window.dispose();

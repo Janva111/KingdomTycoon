@@ -1,10 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Settings extends JPanel implements ActionListener {
+public class Settings extends JFrame implements ActionListener {
 
     public int SCREEN_WIDTH = 1024, SCREEN_HEIGHT = 800;
 
@@ -19,10 +18,7 @@ public class Settings extends JPanel implements ActionListener {
 
 
     public Settings() {
-        createWindow();
-    }
 
-    public void createWindow() {
         menu = new JButton("Menu");
         menu.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT-100, 200, 40);
         menu.setBackground(Color.WHITE);
@@ -70,15 +66,15 @@ public class Settings extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == quit) {
-            window.dispose();
             System.exit(0);
 
         }if (e.getSource() == play) {
             window.dispose();
-            new Game();
+            new GameWindow();
         }
         if (e.getSource() == menu) {
             window.dispose();
+            new Menu();
         }
     }
 }

@@ -9,10 +9,11 @@ public class GameLoop {
     private Timer loop;
 
 
-    public GameLoop(Game game) {
+    public GameLoop() {
         loop = new Timer(FPS, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
 
             }
         });
