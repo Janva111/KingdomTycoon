@@ -53,6 +53,7 @@ public class GameWindow extends JFrame implements ActionListener {
         menuButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
         menuButton.setVisible(false);
 
+
         clickButton = new JButton();
         clickButton.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         clickButton.addActionListener(this);
