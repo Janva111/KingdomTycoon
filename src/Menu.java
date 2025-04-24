@@ -14,6 +14,7 @@ public class Menu extends JFrame implements ActionListener {
     private JLabel backgroundMenu;
     private ImageIcon background = new ImageIcon("Menu.png");
     private ImageIcon icon = new ImageIcon("Icon.png");
+    private Balance balance = new Balance();
 
     public Menu() {
         createWindow();
@@ -67,7 +68,7 @@ public class Menu extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == play) {
             window.dispose();
-            new GameWindow();
+            new GameWindow(balance);
         }
         if (e.getSource() == quit) {
             window.dispose();
@@ -75,7 +76,7 @@ public class Menu extends JFrame implements ActionListener {
         }
         if (e.getSource() == settingsButton) {;
             window.dispose();
-            new Settings();
+            new Settings(balance);
         }
 
     }

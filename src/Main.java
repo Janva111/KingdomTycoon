@@ -17,5 +17,6 @@ public class Main {
              svůj postup výměnou za speciální měnu. Ta poskytuje trvalé vylepšení příjmů a další výhody.
          */
         new Menu();
+        new Balance();
     }
 }

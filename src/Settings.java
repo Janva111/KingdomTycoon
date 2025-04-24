@@ -15,9 +15,10 @@ public class Settings extends JFrame implements ActionListener {
     private JLabel settings;
     private ImageIcon settings_icon = new ImageIcon("settings.png");
     private ImageIcon icon = new ImageIcon("Icon.png");
+    private Balance balance;
 
-
-    public Settings() {
+    public Settings(Balance balance) {
+        this.balance = balance;
 
         menu = new JButton("Menu");
         menu.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT-100, 200, 40);
@@ -70,7 +71,7 @@ public class Settings extends JFrame implements ActionListener {
 
         }if (e.getSource() == play) {
             window.dispose();
-            new GameWindow();
+            new GameWindow(balance);
         }
         if (e.getSource() == menu) {
             window.dispose();
