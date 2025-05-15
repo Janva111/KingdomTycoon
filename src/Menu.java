@@ -20,13 +20,14 @@ public class Menu extends JFrame implements ActionListener {
         createWindow();
     }
 
-    public void createWindow(){
+    public boolean createWindow(){
         play = new JButton("Play");
         play.setBounds(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+80, 200, 40);
         play.setBackground(Color.WHITE);
         play.addActionListener(this);
         play.setFont(new Font("Arial Black", Font.PLAIN, 20));
         play.setHorizontalTextPosition(JButton.CENTER);
+        play.setBorderPainted(false);
 
         quit = new JButton("Quit");
         quit.setBounds(SCREEN_WIDTH/2-350, SCREEN_HEIGHT/2+80, 200, 40);
@@ -34,6 +35,7 @@ public class Menu extends JFrame implements ActionListener {
         quit.addActionListener(this);
         quit.setFont(new Font("Arial Black", Font.PLAIN, 20));
         quit.setHorizontalTextPosition(JButton.CENTER);
+        quit.setBorderPainted(false);
 
         settingsButton = new JButton("Settings");
         settingsButton.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT/2+80, 200, 40);
@@ -41,6 +43,7 @@ public class Menu extends JFrame implements ActionListener {
         settingsButton.addActionListener(this);
         settingsButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
         settingsButton.setHorizontalTextPosition(JButton.CENTER);
+        settingsButton.setBorderPainted(false);
 
         backgroundMenu = new JLabel(background);
         backgroundMenu.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -62,6 +65,11 @@ public class Menu extends JFrame implements ActionListener {
         window.setVisible(true);
         window.add(panel);
         window.setIconImage(icon.getImage());
+        return true;
+    }
+
+    public Balance getBalance() {
+        return balance;
     }
 
     @Override

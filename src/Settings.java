@@ -19,6 +19,10 @@ public class Settings extends JFrame implements ActionListener {
 
     public Settings(Balance balance) {
         this.balance = balance;
+        createWindow();
+    }
+
+    public boolean createWindow() {
 
         menu = new JButton("Menu");
         menu.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT-100, 200, 40);
@@ -26,6 +30,7 @@ public class Settings extends JFrame implements ActionListener {
         menu.addActionListener(this);
         menu.setFont(new Font("Arial Black", Font.PLAIN, 20));
         menu.setHorizontalTextPosition(JButton.CENTER);
+        menu.setBorderPainted(false);
 
         play = new JButton("Play");
         play.setBounds(SCREEN_WIDTH/2-100, SCREEN_HEIGHT-100, 200, 40);
@@ -33,6 +38,7 @@ public class Settings extends JFrame implements ActionListener {
         play.addActionListener(this);
         play.setFont(new Font("Arial Black", Font.PLAIN, 20));
         play.setHorizontalTextPosition(JButton.CENTER);
+        play.setBorderPainted(false);
 
         quit = new JButton("Quit");
         quit.setBounds(SCREEN_WIDTH/2-350, SCREEN_HEIGHT-100, 200, 40);
@@ -40,6 +46,7 @@ public class Settings extends JFrame implements ActionListener {
         quit.addActionListener(this);
         quit.setFont(new Font("Arial Black", Font.PLAIN, 20));
         quit.setHorizontalTextPosition(JButton.CENTER);
+        quit.setBorderPainted(false);
 
         settings = new JLabel(settings_icon);
         settings.setBounds(0,0, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -62,6 +69,7 @@ public class Settings extends JFrame implements ActionListener {
         window.setVisible(true);
         window.add(panel);
         window.setIconImage(icon.getImage());
+        return true;
     }
 
     @Override

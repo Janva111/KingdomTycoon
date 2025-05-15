@@ -24,7 +24,7 @@ public class GameLoop {
         loop = new Timer(delay, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                balance.setActualBalance(balance.getActualBalance() + balance.getPasivIncome()); // rework to funktion
+                balance.addBalance(balance.getPasivIncome()); // rework to funktion
                 System.out.println(balance.getActualBalance());// control
             }
         });

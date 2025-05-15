@@ -35,6 +35,11 @@ public class Balance {
 
     }
 
+
+    public void addBalance(int amount) {
+        actualBalance += amount;
+    }
+
     public void setClickIncome(int clickIncome) {
         this.clickIncome = clickIncome;
     }
