@@ -87,4 +87,8 @@ public abstract class Building{
     public int getLvl() {
         return lvl;
     }
+
+    public ImageIcon getImage() {
+        return image;
+    }
 }

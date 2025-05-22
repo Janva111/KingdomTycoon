@@ -18,7 +18,13 @@ public class GameWindow extends JFrame implements ActionListener {
     private JButton settingsButton;
     private JButton exitButton;
     private JButton shopButton;
-
+    private JLabel townHallPlace;
+    private JLabel churchPlace;
+    private JLabel forgePlace;
+    private JLabel fishermanPlace;
+    private JLabel libraryPlace;
+    private JLabel lumberjackPlace;
+    private JLabel farmPlace;
 
     private ImageIcon background = new ImageIcon("MainImages/GameMap.png");
     private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
@@ -35,7 +41,6 @@ public class GameWindow extends JFrame implements ActionListener {
 
     public GameWindow(Balance balance) {
         this.balance = balance;
-        createWindow();
 
         this.church = new Church();
         this.farm = new Farm();
@@ -44,6 +49,7 @@ public class GameWindow extends JFrame implements ActionListener {
         this.library = new Library();
         this.lumberjack = new Lumberjack();
         this.townHall = new TownHall();
+        createWindow();
 
     }
 
@@ -85,11 +91,32 @@ public class GameWindow extends JFrame implements ActionListener {
         clickButton.setOpaque(false);
         clickButton.setContentAreaFilled(false);
         clickButton.setFocusable(false);
-        //clickButton.setBorderPainted(false);
+        clickButton.setBorderPainted(false);
         clickButton.addActionListener(this);
 
         map = new JLabel(background);
         map.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+        churchPlace = new JLabel(church.getImage());
+        //churchPlace.setBounds();
+
+        forgePlace = new JLabel(forge.getImage());
+        //forgePlace.setBounds();
+
+        fishermanPlace = new JLabel(fisherman.getImage());
+        //fishermanPlace.setBounds();
+
+        libraryPlace = new JLabel(library.getImage());
+        //libraryPlace.setBounds();
+
+        lumberjackPlace = new JLabel(lumberjack.getImage());
+        //lumberjackPlace.setBounds();
+
+        townHallPlace = new JLabel(townHall.getImage());
+        //townHallPlace.setBounds();
+
+        farmPlace = new JLabel(farm.getImage());
+        //farmPlace.setBounds();
 
         panel = new JPanel();
         panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -100,6 +127,13 @@ public class GameWindow extends JFrame implements ActionListener {
         panel.add(exitButton);
         panel.add(shopButton);
         panel.add(clickButton);
+        panel.add(churchPlace);
+        panel.add(forgePlace);
+        panel.add(fishermanPlace);
+        panel.add(libraryPlace);
+        panel.add(lumberjackPlace);
+        panel.add(townHallPlace);
+        panel.add(farmPlace);
         panel.add(map);
 
         window = new JFrame("Kingdom Tycoon | Game");
