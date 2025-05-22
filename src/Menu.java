@@ -8,8 +8,8 @@ public class Menu extends JFrame implements ActionListener {
 
     private JFrame window;
     private JPanel panel;
-    private JButton play;
-    private JButton quit;
+    private JButton playButton;
+    private JButton exitButton;
     private JButton settingsButton;
     private JLabel backgroundMenu;
     private ImageIcon background = new ImageIcon("MainImages/Menu.png");
@@ -21,21 +21,21 @@ public class Menu extends JFrame implements ActionListener {
     }
 
     public boolean createWindow(){
-        play = new JButton("Play");
-        play.setBounds(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+80, 200, 40);
-        play.setBackground(Color.WHITE);
-        play.addActionListener(this);
-        play.setFont(new Font("Arial Black", Font.PLAIN, 20));
-        play.setHorizontalTextPosition(JButton.CENTER);
-        play.setBorderPainted(false);
+        playButton = new JButton("Play");
+        playButton.setBounds(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+80, 200, 40);
+        playButton.setBackground(Color.WHITE);
+        playButton.addActionListener(this);
+        playButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        playButton.setHorizontalTextPosition(JButton.CENTER);
+        playButton.setBorderPainted(false);
 
-        quit = new JButton("Quit");
-        quit.setBounds(SCREEN_WIDTH/2-350, SCREEN_HEIGHT/2+80, 200, 40);
-        quit.setBackground(Color.WHITE);
-        quit.addActionListener(this);
-        quit.setFont(new Font("Arial Black", Font.PLAIN, 20));
-        quit.setHorizontalTextPosition(JButton.CENTER);
-        quit.setBorderPainted(false);
+        exitButton = new JButton("Quit");
+        exitButton.setBounds(SCREEN_WIDTH/2-350, SCREEN_HEIGHT/2+80, 200, 40);
+        exitButton.setBackground(Color.WHITE);
+        exitButton.addActionListener(this);
+        exitButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        exitButton.setHorizontalTextPosition(JButton.CENTER);
+        exitButton.setBorderPainted(false);
 
         settingsButton = new JButton("Settings");
         settingsButton.setBounds(SCREEN_WIDTH/2+150, SCREEN_HEIGHT/2+80, 200, 40);
@@ -52,8 +52,8 @@ public class Menu extends JFrame implements ActionListener {
         panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
         panel.setBackground(Color.BLACK);
         panel.setLayout(null);
-        panel.add(play);
-        panel.add(quit);
+        panel.add(playButton);
+        panel.add(exitButton);
         panel.add(settingsButton);
         panel.add(backgroundMenu);
 
@@ -74,11 +74,11 @@ public class Menu extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == play) {
+        if (e.getSource() == playButton) {
             window.dispose();
             new GameWindow(balance);
         }
-        if (e.getSource() == quit) {
+        if (e.getSource() == exitButton) {
             window.dispose();
             System.exit(0);
         }

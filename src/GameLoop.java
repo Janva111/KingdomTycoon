@@ -22,7 +22,7 @@ public class GameLoop {
         loop = new Timer(delay, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                balance.addBalance(balance.getPasivIncome()); // rework to funktion
+                balance.addBalance(balance.getPassiveIncome()); // rework to funktion
                 System.out.println(balance.getActualBalance());// control
             }
         });
@@ -54,13 +54,5 @@ public class GameLoop {
 
     public static void setDelay(int delay) {
         GameLoop.delay = delay;
-    }
-
-    public static int getFPS() {
-        return FPS;
-    }
-
-    public static int getDelay() {
-        return delay;
     }
 }

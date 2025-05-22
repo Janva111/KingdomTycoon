@@ -132,7 +132,7 @@ public class GameWindow extends JFrame implements ActionListener {
         }
         if (e.getSource() == shopButton) {
             window.dispose();
-            new Shop(church,farm,forge,fisherman,library,lumberjack,townHall);
+            new Shop(church,farm,forge,fisherman,library,lumberjack,townHall,balance);
         }
     }
 

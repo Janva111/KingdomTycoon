@@ -18,7 +18,7 @@ public class Shop extends JFrame implements ActionListener {
     private JButton libraryUpgrade;
     private JButton lumberjackUpgrade;
     private JButton townHallUpgrade;
-    private JButton quitButton;
+    private JButton exitButton;
     private JButton playButton;
     private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
 
@@ -32,7 +32,9 @@ public class Shop extends JFrame implements ActionListener {
 
     private Balance balance;
 
-    public Shop(Church church, Farm farm, Forge forge,Fisherman fisherman, Library library,Lumberjack lumberjack, TownHall townHall) {
+    public Shop(Church church, Farm farm, Forge forge,Fisherman fisherman, Library library,Lumberjack lumberjack, TownHall townHall, Balance balance) {
+        this.balance = balance;
+
         this.church = church;
         this.farm = farm;
         this.forge = forge;
@@ -44,8 +46,26 @@ public class Shop extends JFrame implements ActionListener {
         createWindow();
     }
 
+    // prepisovani hodnot po kliknuti
+
 
     public boolean createWindow() {
+
+        exitButton = new JButton("Exit");
+        exitButton.setBounds(10, 10, 200, 40);
+        exitButton.setBackground(Color.WHITE);
+        exitButton.addActionListener(this);
+        exitButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        exitButton.setHorizontalTextPosition(JButton.CENTER);
+        exitButton.setBorderPainted(false);
+
+        playButton = new JButton("Continue");
+        playButton.setBounds(790, 10, 200, 40);
+        playButton.setBackground(Color.WHITE);
+        playButton.addActionListener(this);
+        playButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        playButton.setHorizontalTextPosition(JButton.CENTER);
+        playButton.setBorderPainted(false);
 
         townHallUpgrade = new JButton("TownHall upgrade: " + townHall.getUpgradeCost());
         townHallUpgrade.setBounds(50, 60,SCREEN_WIDTH-100 , 90);
@@ -55,7 +75,6 @@ public class Shop extends JFrame implements ActionListener {
         townHallUpgrade.addActionListener(this);
         townHallUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
         townHallUpgrade.setHorizontalTextPosition(JButton.CENTER);
-        //townHallUpgrade.setBorderPainted(false);
 
         lumberjackUpgrade = new JButton("Lumberjack upgrade: " + lumberjack.getUpgradeCost());
         lumberjackUpgrade.setBounds(50, 160,SCREEN_WIDTH-100 , 90);
@@ -65,7 +84,6 @@ public class Shop extends JFrame implements ActionListener {
         lumberjackUpgrade.addActionListener(this);
         lumberjackUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
         lumberjackUpgrade.setHorizontalTextPosition(JButton.CENTER);
-        //lumberjackUpgrade.setBorderPainted(false);
 
         farmUpgrade = new JButton("Farm upgrade: " + farm.getUpgradeCost());
         farmUpgrade.setBounds(50, 260,SCREEN_WIDTH-100 , 90);
@@ -75,7 +93,6 @@ public class Shop extends JFrame implements ActionListener {
         farmUpgrade.addActionListener(this);
         farmUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
         farmUpgrade.setHorizontalTextPosition(JButton.CENTER);
-        //farmUpgrade.setBorderPainted(false);
 
         fishermanUpgrade = new JButton("Fisherman upgrade: " + fisherman.getUpgradeCost());
         fishermanUpgrade.setBounds(50, 360,SCREEN_WIDTH-100 , 90);
@@ -85,7 +102,6 @@ public class Shop extends JFrame implements ActionListener {
         fishermanUpgrade.addActionListener(this);
         fishermanUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
         fishermanUpgrade.setHorizontalTextPosition(JButton.CENTER);
-        //fishermanUpgrade.setBorderPainted(false);
 
         forgeUpgrade = new JButton("Forge upgrade: " + forge.getUpgradeCost());
         forgeUpgrade.setBounds(50, 460,SCREEN_WIDTH-100 , 90);
@@ -95,7 +111,6 @@ public class Shop extends JFrame implements ActionListener {
         forgeUpgrade.addActionListener(this);
         forgeUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
         forgeUpgrade.setHorizontalTextPosition(JButton.CENTER);
-        //forgeUpgrade.setBorderPainted(false);
 
         libraryUpgrade = new JButton("Library upgrade: " + library.getUpgradeCost());
         libraryUpgrade.setBounds(50, 560,SCREEN_WIDTH-100 , 90);
@@ -105,7 +120,6 @@ public class Shop extends JFrame implements ActionListener {
         libraryUpgrade.addActionListener(this);
         libraryUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
         libraryUpgrade.setHorizontalTextPosition(JButton.CENTER);
-        //libraryUpgrade.setBorderPainted(false);
 
         churchUpgrade = new JButton("Church upgrade: " + church.getUpgradeCost());
         churchUpgrade.setBounds(50, 660,SCREEN_WIDTH-100 , 90);
@@ -115,7 +129,6 @@ public class Shop extends JFrame implements ActionListener {
         churchUpgrade.addActionListener(this);
         churchUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
         churchUpgrade.setHorizontalTextPosition(JButton.CENTER);
-        //churchUpgrade.setBorderPainted(false);
 
         panel = new JPanel();
         panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -128,6 +141,8 @@ public class Shop extends JFrame implements ActionListener {
         panel.add(libraryUpgrade);
         panel.add(lumberjackUpgrade);
         panel.add(farmUpgrade);
+        panel.add(exitButton);
+        panel.add(playButton);
 
         window = new JFrame("Kingdom Tycoon | Shop");
         window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
@@ -140,36 +155,91 @@ public class Shop extends JFrame implements ActionListener {
         return true;
     }
 
-    // aktualizovat furt pres vedlejsi metodu co budu vyvolavat pro aktualizaci treba vytvaret znovu panel
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == farmUpgrade) {
+            if(balance.getActualBalance()>farm.getUpgradeCost() ) {
+                farm.addLvl();
+                farm.setUpgradeCost();
+                balance.subtractBalance(farm.getUpgradeCost());
+                balance.addPassiveIncome(farm.getPassiveBoost());
+                balance.addClickIncome(farm.getClickBoost());
 
+            }
         }
         if (e.getSource() == fishermanUpgrade) {
+            if (balance.getActualBalance()>fisherman.getUpgradeCost()) {
+                balance.subtractBalance(fisherman.getUpgradeCost());
+                fisherman.addLvl();
+                fisherman.setUpgradeCost();
+                balance.subtractBalance(fisherman.getUpgradeCost());
+                balance.addPassiveIncome(fisherman.getPassiveBoost());
+                balance.addClickIncome(fisherman.getClickBoost());
 
+            }
         }
         if (e.getSource() == forgeUpgrade) {
+            if (balance.getActualBalance()>forge.getUpgradeCost()) {
+                balance.subtractBalance(forge.getUpgradeCost());
+                forge.addLvl();
+                forge.setUpgradeCost();
+                balance.subtractBalance(forge.getUpgradeCost());
+                balance.addPassiveIncome(forge.getPassiveBoost());
+                balance.addClickIncome(forge.getClickBoost());
 
+            }
         }
         if (e.getSource() == libraryUpgrade) {
+            if (balance.getActualBalance()>library.getUpgradeCost()) {
+                balance.subtractBalance(library.getUpgradeCost());
+                library.addLvl();
+                library.setUpgradeCost();
+                balance.subtractBalance(library.getUpgradeCost());
+                balance.addPassiveIncome(library.getPassiveBoost());
+                balance.addClickIncome(library.getClickBoost());
 
+            }
         }
         if (e.getSource() == lumberjackUpgrade) {
+            if (balance.getActualBalance()>lumberjack.getUpgradeCost()) {
+                balance.subtractBalance(lumberjack.getUpgradeCost());
+                lumberjack.addLvl();
+                lumberjack.setUpgradeCost();
+                balance.subtractBalance(lumberjack.getUpgradeCost());
+                balance.addPassiveIncome(lumberjack.getPassiveBoost());
+                balance.addClickIncome(lumberjack.getClickBoost());
 
+            }
         }
         if (e.getSource() == townHallUpgrade) {
+            if (balance.getActualBalance()>townHall.getUpgradeCost()) {
+                balance.subtractBalance(townHall.getUpgradeCost());
+                townHall.addLvl();
+                townHall.setUpgradeCost();
+                balance.subtractBalance(townHall.getUpgradeCost());
+                balance.addPassiveIncome(townHall.getPassiveBoost());
+                balance.addClickIncome(townHall.getClickBoost());
 
+            }
         }
         if (e.getSource() == churchUpgrade){
+            if (balance.getActualBalance()>church.getUpgradeCost()) {
+                balance.subtractBalance(church.getUpgradeCost());
+                church.addLvl();
+                church.setUpgradeCost();
+                balance.subtractBalance(church.getUpgradeCost());
+                balance.addPassiveIncome(church.getPassiveBoost());
+                balance.addClickIncome(church.getClickBoost());
 
+            }
         }
         if (e.getSource() == playButton) {
-
+            window.dispose();
+            new GameWindow(balance);
         }
-        if (e.getSource() == quitButton) {
-
+        if (e.getSource() == exitButton) {
+            window.dispose();
+            System.exit(0);
         }
     }
 }

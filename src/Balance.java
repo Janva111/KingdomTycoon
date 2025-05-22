@@ -8,7 +8,7 @@ public class Balance {
     private String textFile = "balance.txt";
 
     private int clickIncome; // 0
-    private int pasivIncome; // 1
+    private int passiveIncome; // 1
     private int actualBalance; // 2
 
     public Balance() {
@@ -23,7 +23,7 @@ public class Balance {
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(";");
                 setClickIncome(Integer.parseInt(split[0]));
-                setPasivIncome(Integer.parseInt(split[1]));
+                setPassiveIncome(Integer.parseInt(split[1]));
                 setActualBalance(Integer.parseInt(split[2]));
             }
             return true;
@@ -39,13 +39,23 @@ public class Balance {
     public void addBalance(int amount) {
         actualBalance += amount;
     }
+    public void subtractBalance(int amount) {
+        actualBalance -= amount;
+    }
+
+    public void addClickIncome(int amount) {
+        clickIncome += amount;
+    }
+    public void addPassiveIncome(int amount) {
+        passiveIncome += amount;
+    }
 
     public void setClickIncome(int clickIncome) {
         this.clickIncome = clickIncome;
     }
 
-    public void setPasivIncome(int pasivIncome) {
-        this.pasivIncome = pasivIncome;
+    public void setPassiveIncome(int passiveIncome) {
+        this.passiveIncome = passiveIncome;
     }
 
     public void setActualBalance(int actualBalance) {
@@ -56,8 +66,8 @@ public class Balance {
         return clickIncome;
     }
 
-    public int getPasivIncome() {
-        return pasivIncome;
+    public int getPassiveIncome() {
+        return passiveIncome;
     }
 
     public int getActualBalance() {
