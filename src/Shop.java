@@ -20,6 +20,8 @@ public class Shop extends JFrame implements ActionListener {
     private JButton townHallUpgrade;
     private JButton exitButton;
     private JButton playButton;
+    private JLabel shopBackground;
+    private ImageIcon background = new ImageIcon("MainImages/Shop.png");
     private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
 
     private Church church;
@@ -52,7 +54,7 @@ public class Shop extends JFrame implements ActionListener {
     public boolean createWindow() {
 
         exitButton = new JButton("Exit");
-        exitButton.setBounds(10, 10, 200, 40);
+        exitButton.setBounds(10, 45, 200, 40);
         exitButton.setBackground(Color.WHITE);
         exitButton.addActionListener(this);
         exitButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
@@ -60,7 +62,7 @@ public class Shop extends JFrame implements ActionListener {
         exitButton.setBorderPainted(false);
 
         playButton = new JButton("Continue");
-        playButton.setBounds(790, 10, 200, 40);
+        playButton.setBounds(790, 45, 200, 40);
         playButton.setBackground(Color.WHITE);
         playButton.addActionListener(this);
         playButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
@@ -68,67 +70,78 @@ public class Shop extends JFrame implements ActionListener {
         playButton.setBorderPainted(false);
 
         townHallUpgrade = new JButton("TownHall upgrade: " + townHall.getUpgradeCost());
-        townHallUpgrade.setBounds(50, 60,SCREEN_WIDTH-100 , 90);
+        townHallUpgrade.setBounds(50, 160,SCREEN_WIDTH-100 , 70);
         townHallUpgrade.setOpaque(false);
         townHallUpgrade.setContentAreaFilled(false);
         townHallUpgrade.setFocusable(false);
         townHallUpgrade.addActionListener(this);
         townHallUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        townHallUpgrade.setForeground(Color.WHITE);
         townHallUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
         lumberjackUpgrade = new JButton("Lumberjack upgrade: " + lumberjack.getUpgradeCost());
-        lumberjackUpgrade.setBounds(50, 160,SCREEN_WIDTH-100 , 90);
+        lumberjackUpgrade.setBounds(50, 245,SCREEN_WIDTH-100 , 70);
         lumberjackUpgrade.setOpaque(false);
         lumberjackUpgrade.setContentAreaFilled(false);
         lumberjackUpgrade.setFocusable(false);
         lumberjackUpgrade.addActionListener(this);
         lumberjackUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        lumberjackUpgrade.setForeground(Color.WHITE);
         lumberjackUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
         farmUpgrade = new JButton("Farm upgrade: " + farm.getUpgradeCost());
-        farmUpgrade.setBounds(50, 260,SCREEN_WIDTH-100 , 90);
+        farmUpgrade.setBounds(50, 330,SCREEN_WIDTH-100 , 70);
         farmUpgrade.setOpaque(false);
         farmUpgrade.setContentAreaFilled(false);
         farmUpgrade.setFocusable(false);
         farmUpgrade.addActionListener(this);
         farmUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        farmUpgrade.setForeground(Color.WHITE);
         farmUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
         fishermanUpgrade = new JButton("Fisherman upgrade: " + fisherman.getUpgradeCost());
-        fishermanUpgrade.setBounds(50, 360,SCREEN_WIDTH-100 , 90);
+        fishermanUpgrade.setBounds(50, 415,SCREEN_WIDTH-100 , 70);
         fishermanUpgrade.setOpaque(false);
         fishermanUpgrade.setContentAreaFilled(false);
         fishermanUpgrade.setFocusable(false);
         fishermanUpgrade.addActionListener(this);
         fishermanUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        fishermanUpgrade.setForeground(Color.WHITE);
         fishermanUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
         forgeUpgrade = new JButton("Forge upgrade: " + forge.getUpgradeCost());
-        forgeUpgrade.setBounds(50, 460,SCREEN_WIDTH-100 , 90);
+        forgeUpgrade.setBounds(50, 500,SCREEN_WIDTH-100 , 70);
         forgeUpgrade.setOpaque(false);
         forgeUpgrade.setContentAreaFilled(false);
         forgeUpgrade.setFocusable(false);
         forgeUpgrade.addActionListener(this);
         forgeUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        forgeUpgrade.setForeground(Color.WHITE);
         forgeUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
         libraryUpgrade = new JButton("Library upgrade: " + library.getUpgradeCost());
-        libraryUpgrade.setBounds(50, 560,SCREEN_WIDTH-100 , 90);
+        libraryUpgrade.setBounds(50, 585,SCREEN_WIDTH-100 , 70);
         libraryUpgrade.setOpaque(false);
         libraryUpgrade.setContentAreaFilled(false);
         libraryUpgrade.setFocusable(false);
         libraryUpgrade.addActionListener(this);
         libraryUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        libraryUpgrade.setForeground(Color.WHITE);
         libraryUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
         churchUpgrade = new JButton("Church upgrade: " + church.getUpgradeCost());
-        churchUpgrade.setBounds(50, 660,SCREEN_WIDTH-100 , 90);
+        churchUpgrade.setBounds(50, 675,SCREEN_WIDTH-100 , 70);
         churchUpgrade.setOpaque(false);
         churchUpgrade.setContentAreaFilled(false);
         churchUpgrade.setFocusable(false);
         churchUpgrade.addActionListener(this);
         churchUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        churchUpgrade.setForeground(Color.WHITE);
         churchUpgrade.setHorizontalTextPosition(JButton.CENTER);
+
+        shopBackground = new JLabel(background);
+        shopBackground.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
 
         panel = new JPanel();
         panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -143,6 +156,7 @@ public class Shop extends JFrame implements ActionListener {
         panel.add(farmUpgrade);
         panel.add(exitButton);
         panel.add(playButton);
+        panel.add(shopBackground);
 
         window = new JFrame("Kingdom Tycoon | Shop");
         window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
