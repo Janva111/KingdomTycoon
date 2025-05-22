@@ -1,7 +1,7 @@
 package Buildings;
 
 public class Library extends Building {
-    private String loadFile ="BuildingParams/LibraryParams/Params.txt";
+    private String loadFile = "BuildingParams/LibraryParams/Params.txt";
 
     private String design1 = "BuildingParams/LibraryParams/"; // 1-40
     private String design2 = "BuildingParams/LibraryParams/"; // 40-100
@@ -9,7 +9,7 @@ public class Library extends Building {
 
     public Library() {
         loadBuilding(loadFile);
-        loadImage(design1,design2,desing3);
+        loadImage(design1, design2, desing3);
     }
 
     public boolean upgrade() {

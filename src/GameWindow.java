@@ -53,7 +53,7 @@ public class GameWindow extends JFrame implements ActionListener {
 
     }
 
-    public boolean createWindow(){
+    public boolean createWindow() {
         exitButton = new JButton("Exit");
         exitButton.setBounds(10, 720, 200, 40);
         exitButton.setBackground(Color.WHITE);
@@ -87,7 +87,7 @@ public class GameWindow extends JFrame implements ActionListener {
         shopButton.setBorderPainted(false);
 
         clickButton = new JButton();
-        clickButton.setBounds(206,150,SCREEN_WIDTH/2+100,SCREEN_HEIGHT/2+100);
+        clickButton.setBounds(206, 150, SCREEN_WIDTH / 2 + 100, SCREEN_HEIGHT / 2 + 100);
         clickButton.setOpaque(false);
         clickButton.setContentAreaFilled(false);
         clickButton.setFocusable(false);
@@ -119,7 +119,7 @@ public class GameWindow extends JFrame implements ActionListener {
         //farmPlace.setBounds();
 
         panel = new JPanel();
-        panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
+        panel.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         panel.setBackground(Color.BLACK);
         panel.setLayout(null);
         panel.add(settingsButton);
@@ -137,7 +137,7 @@ public class GameWindow extends JFrame implements ActionListener {
         panel.add(map);
 
         window = new JFrame("Kingdom Tycoon | Game");
-        window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
+        window.setSize(SCREEN_WIDTH + 5, SCREEN_HEIGHT + 5);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         window.setLocationRelativeTo(null);
@@ -166,7 +166,7 @@ public class GameWindow extends JFrame implements ActionListener {
         }
         if (e.getSource() == shopButton) {
             window.dispose();
-            new Shop(church,farm,forge,fisherman,library,lumberjack,townHall,balance);
+            new Shop(church, farm, forge, fisherman, library, lumberjack, townHall, balance);
         }
     }
 

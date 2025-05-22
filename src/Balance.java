@@ -15,7 +15,7 @@ public class Balance {
     }
 
 
-    public boolean loadBalance(){
+    public boolean loadBalance() {
         try {
             BufferedReader br = new BufferedReader(new FileReader(textFile));
             String line;
@@ -39,6 +39,7 @@ public class Balance {
     public void addBalance(int amount) {
         actualBalance += amount;
     }
+
     public void subtractBalance(int amount) {
         actualBalance -= amount;
     }
@@ -46,6 +47,7 @@ public class Balance {
     public void addClickIncome(int amount) {
         clickIncome += amount;
     }
+
     public void addPassiveIncome(int amount) {
         passiveIncome += amount;
     }

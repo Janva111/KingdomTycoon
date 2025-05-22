@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public abstract class Building{
+public abstract class Building {
 
     protected int lvl;
     protected int passiveBoost;
@@ -46,9 +46,9 @@ public abstract class Building{
         addLvl();
         setUpgradeCost();
 
-        actualBalance = actualBalance-upgradeCost;
-        clickIncome = clickIncome+clickBoost;
-        passiveIncome = passiveIncome+passiveBoost;
+        actualBalance = actualBalance - upgradeCost;
+        clickIncome = clickIncome + clickBoost;
+        passiveIncome = passiveIncome + passiveBoost;
 
         // prepsat fileBalance - clickIncome;passiveIncome;actualIncome
         // prepsat building file - lvl, passivBoost, clickBoost, upgradeCostMult
@@ -80,14 +80,16 @@ public abstract class Building{
     }
 
     public int loadImage(String filename1, String filename2, String filename3) {
-        if (getLvl() <= 40 && getLvl() >= 0 ) {
+        if (getLvl() <= 40 && getLvl() >= 0) {
             image = new ImageIcon(filename1);
             return 1;
-        }if (getLvl()>20 && getLvl()<100) {
+        }
+        if (getLvl() > 20 && getLvl() < 100) {
             image = new ImageIcon(filename2);
             setImage(image);
             return 2;
-        }if (getLvl()>100 && getLvl()<200) {
+        }
+        if (getLvl() > 100 && getLvl() < 200) {
             image = new ImageIcon(filename3);
             setImage(image);
             return 3;
@@ -96,7 +98,7 @@ public abstract class Building{
     }
 
     public void addLvl() {
-        this.lvl ++;
+        this.lvl++;
     }
 
     public void setImage(ImageIcon image) {
@@ -104,19 +106,11 @@ public abstract class Building{
     }
 
     public void setUpgradeCost() {
-        this.upgradeCost = upgradeCostMult*lvl + upgradeCostMult;
+        this.upgradeCost = upgradeCostMult * lvl + upgradeCostMult;
     }
 
     public int getUpgradeCost() {
         return upgradeCost;
-    }
-
-    public int getClickBoost() {
-        return clickBoost;
-    }
-
-    public int getPassiveBoost() {
-        return passiveBoost;
     }
 
     public int getLvl() {

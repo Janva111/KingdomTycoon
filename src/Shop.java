@@ -34,7 +34,7 @@ public class Shop extends JFrame implements ActionListener {
 
     private Balance balance;
 
-    public Shop(Church church, Farm farm, Forge forge,Fisherman fisherman, Library library,Lumberjack lumberjack, TownHall townHall, Balance balance) {
+    public Shop(Church church, Farm farm, Forge forge, Fisherman fisherman, Library library, Lumberjack lumberjack, TownHall townHall, Balance balance) {
         this.balance = balance;
 
         this.church = church;
@@ -70,7 +70,7 @@ public class Shop extends JFrame implements ActionListener {
         playButton.setBorderPainted(false);
 
         townHallUpgrade = new JButton("TownHall upgrade: " + townHall.getUpgradeCost());
-        townHallUpgrade.setBounds(50, 160,SCREEN_WIDTH-100 , 70);
+        townHallUpgrade.setBounds(50, 160, SCREEN_WIDTH - 100, 70);
         townHallUpgrade.setOpaque(false);
         townHallUpgrade.setContentAreaFilled(false);
         townHallUpgrade.setFocusable(false);
@@ -80,7 +80,7 @@ public class Shop extends JFrame implements ActionListener {
         townHallUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
         farmUpgrade = new JButton("Farm upgrade: " + farm.getUpgradeCost());
-        farmUpgrade.setBounds(50, 245,SCREEN_WIDTH-100 , 70);
+        farmUpgrade.setBounds(50, 245, SCREEN_WIDTH - 100, 70);
         farmUpgrade.setOpaque(false);
         farmUpgrade.setContentAreaFilled(false);
         farmUpgrade.setFocusable(false);
@@ -90,7 +90,7 @@ public class Shop extends JFrame implements ActionListener {
 
         farmUpgrade.setHorizontalTextPosition(JButton.CENTER);
         lumberjackUpgrade = new JButton("Lumberjack upgrade: " + lumberjack.getUpgradeCost());
-        lumberjackUpgrade.setBounds(50, 330,SCREEN_WIDTH-100 , 70);
+        lumberjackUpgrade.setBounds(50, 330, SCREEN_WIDTH - 100, 70);
         lumberjackUpgrade.setOpaque(false);
         lumberjackUpgrade.setContentAreaFilled(false);
         lumberjackUpgrade.setFocusable(false);
@@ -100,9 +100,8 @@ public class Shop extends JFrame implements ActionListener {
         lumberjackUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
 
-
         fishermanUpgrade = new JButton("Fisherman upgrade: " + fisherman.getUpgradeCost());
-        fishermanUpgrade.setBounds(50, 415,SCREEN_WIDTH-100 , 70);
+        fishermanUpgrade.setBounds(50, 415, SCREEN_WIDTH - 100, 70);
         fishermanUpgrade.setOpaque(false);
         fishermanUpgrade.setContentAreaFilled(false);
         fishermanUpgrade.setFocusable(false);
@@ -112,7 +111,7 @@ public class Shop extends JFrame implements ActionListener {
         fishermanUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
         forgeUpgrade = new JButton("Forge upgrade: " + forge.getUpgradeCost());
-        forgeUpgrade.setBounds(50, 500,SCREEN_WIDTH-100 , 70);
+        forgeUpgrade.setBounds(50, 500, SCREEN_WIDTH - 100, 70);
         forgeUpgrade.setOpaque(false);
         forgeUpgrade.setContentAreaFilled(false);
         forgeUpgrade.setFocusable(false);
@@ -122,7 +121,7 @@ public class Shop extends JFrame implements ActionListener {
         forgeUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
         libraryUpgrade = new JButton("Library upgrade: " + library.getUpgradeCost());
-        libraryUpgrade.setBounds(50, 585,SCREEN_WIDTH-100 , 70);
+        libraryUpgrade.setBounds(50, 585, SCREEN_WIDTH - 100, 70);
         libraryUpgrade.setOpaque(false);
         libraryUpgrade.setContentAreaFilled(false);
         libraryUpgrade.setFocusable(false);
@@ -132,7 +131,7 @@ public class Shop extends JFrame implements ActionListener {
         libraryUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
         churchUpgrade = new JButton("Church upgrade: " + church.getUpgradeCost());
-        churchUpgrade.setBounds(50, 675,SCREEN_WIDTH-100 , 70);
+        churchUpgrade.setBounds(50, 675, SCREEN_WIDTH - 100, 70);
         churchUpgrade.setOpaque(false);
         churchUpgrade.setContentAreaFilled(false);
         churchUpgrade.setFocusable(false);
@@ -146,7 +145,7 @@ public class Shop extends JFrame implements ActionListener {
 
 
         panel = new JPanel();
-        panel.setBounds(0,0,SCREEN_WIDTH, SCREEN_HEIGHT);
+        panel.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         panel.setBackground(Color.BLACK);
         panel.setLayout(null);
         panel.add(townHallUpgrade);
@@ -161,7 +160,7 @@ public class Shop extends JFrame implements ActionListener {
         panel.add(shopBackground);
 
         window = new JFrame("Kingdom Tycoon | Shop");
-        window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
+        window.setSize(SCREEN_WIDTH + 5, SCREEN_HEIGHT + 5);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         window.setLocationRelativeTo(null);
@@ -176,45 +175,45 @@ public class Shop extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == farmUpgrade) {
-            if(balance.getActualBalance()>farm.getUpgradeCost() ) {
+            if (balance.getActualBalance() > farm.getUpgradeCost()) {
                 farm.upgrade();
                 balance.loadBalance();
             }
         }
         if (e.getSource() == fishermanUpgrade) {
-            if (balance.getActualBalance()>fisherman.getUpgradeCost()) {
+            if (balance.getActualBalance() > fisherman.getUpgradeCost()) {
                 fisherman.upgrade();
                 balance.loadBalance();
             }
         }
         if (e.getSource() == forgeUpgrade) {
-            if (balance.getActualBalance()>forge.getUpgradeCost()) {
+            if (balance.getActualBalance() > forge.getUpgradeCost()) {
                 forge.upgrade();
                 balance.loadBalance();
             }
         }
         if (e.getSource() == libraryUpgrade) {
-            if (balance.getActualBalance()>library.getUpgradeCost()) {
+            if (balance.getActualBalance() > library.getUpgradeCost()) {
                 library.upgrade();
                 balance.loadBalance();
 
             }
         }
         if (e.getSource() == lumberjackUpgrade) {
-            if (balance.getActualBalance()>lumberjack.getUpgradeCost()) {
+            if (balance.getActualBalance() > lumberjack.getUpgradeCost()) {
                 lumberjack.upgrade();
                 balance.loadBalance();
 
             }
         }
         if (e.getSource() == townHallUpgrade) {
-            if (balance.getActualBalance()>townHall.getUpgradeCost()) {
+            if (balance.getActualBalance() > townHall.getUpgradeCost()) {
                 townHall.upgrade();
                 balance.loadBalance();
             }
         }
-        if (e.getSource() == churchUpgrade){
-            if (balance.getActualBalance()>church.getUpgradeCost()) {
+        if (e.getSource() == churchUpgrade) {
+            if (balance.getActualBalance() > church.getUpgradeCost()) {
                 church.upgrade();
                 balance.loadBalance();
             }
