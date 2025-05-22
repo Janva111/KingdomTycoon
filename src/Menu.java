@@ -57,7 +57,7 @@ public class Menu extends JFrame implements ActionListener {
         panel.add(settingsButton);
         panel.add(backgroundMenu);
 
-        window = new JFrame("Kingdom Tycoon");
+        window = new JFrame("Kingdom Tycoon | Menu");
         window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);

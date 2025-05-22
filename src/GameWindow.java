@@ -1,3 +1,5 @@
+import Buildings.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Menu;
@@ -23,9 +25,25 @@ public class GameWindow extends JFrame implements ActionListener {
 
     private Balance balance;
 
+    private Church church;
+    private Farm farm;
+    private Forge forge;
+    private Fisherman fisherman;
+    private Library library;
+    private Lumberjack lumberjack;
+    private TownHall townHall;
+
     public GameWindow(Balance balance) {
         this.balance = balance;
         createWindow();
+
+        this.church = new Church("");
+        this.farm = new Farm("");
+        this.forge = new Forge("");
+        this.fisherman = new Fisherman("");
+        this.library = new Library("");
+        this.lumberjack = new Lumberjack("");
+        this.townHall = new TownHall("");
 
     }
 
@@ -84,7 +102,7 @@ public class GameWindow extends JFrame implements ActionListener {
         panel.add(clickButton);
         panel.add(map);
 
-        window = new JFrame("Kingdom Tycoon");
+        window = new JFrame("Kingdom Tycoon | Game");
         window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
@@ -114,7 +132,7 @@ public class GameWindow extends JFrame implements ActionListener {
         }
         if (e.getSource() == shopButton) {
             window.dispose();
-            new Shop();
+            new Shop(church,farm,forge,fisherman,library,lumberjack,townHall);
         }
     }
 

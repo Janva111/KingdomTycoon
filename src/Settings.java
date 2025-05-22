@@ -61,7 +61,7 @@ public class Settings extends JFrame implements ActionListener {
         panel.add(menu);
         panel.add(settings);
 
-        window = new JFrame("Kingdom Tycoon");
+        window = new JFrame("Kingdom Tycoon | Settings");
         window.setSize(SCREEN_WIDTH+5, SCREEN_HEIGHT+5);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);

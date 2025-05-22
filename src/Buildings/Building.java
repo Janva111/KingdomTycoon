@@ -21,6 +21,7 @@ public abstract class Building {
     }
 
     public boolean loadBuilding(String filename) {
+       /*
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
             String line;
@@ -37,6 +38,24 @@ public abstract class Building {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        */
+        return true;
     }
 
+    public int getUpgradeCost() {
+        return upgradeCost;
+    }
+
+    public int getClickBoost() {
+        return clickBoost;
+    }
+
+    public int getPasivBoost() {
+        return pasivBoost;
+    }
+
+    public int getLvl() {
+        return lvl;
+    }
 }
