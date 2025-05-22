@@ -178,38 +178,45 @@ public class Shop extends JFrame implements ActionListener {
         if (e.getSource() == farmUpgrade) {
             if(balance.getActualBalance()>farm.getUpgradeCost() ) {
                 farm.upgrade();
+                balance.loadBalance();
             }
         }
         if (e.getSource() == fishermanUpgrade) {
             if (balance.getActualBalance()>fisherman.getUpgradeCost()) {
                 fisherman.upgrade();
+                balance.loadBalance();
             }
         }
         if (e.getSource() == forgeUpgrade) {
             if (balance.getActualBalance()>forge.getUpgradeCost()) {
                 forge.upgrade();
+                balance.loadBalance();
             }
         }
         if (e.getSource() == libraryUpgrade) {
             if (balance.getActualBalance()>library.getUpgradeCost()) {
                 library.upgrade();
+                balance.loadBalance();
 
             }
         }
         if (e.getSource() == lumberjackUpgrade) {
             if (balance.getActualBalance()>lumberjack.getUpgradeCost()) {
                 lumberjack.upgrade();
+                balance.loadBalance();
 
             }
         }
         if (e.getSource() == townHallUpgrade) {
             if (balance.getActualBalance()>townHall.getUpgradeCost()) {
                 townHall.upgrade();
+                balance.loadBalance();
             }
         }
         if (e.getSource() == churchUpgrade){
             if (balance.getActualBalance()>church.getUpgradeCost()) {
                 church.upgrade();
+                balance.loadBalance();
             }
         }
         if (e.getSource() == playButton) {

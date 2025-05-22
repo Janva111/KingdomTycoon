@@ -16,6 +16,8 @@ public class GameLoop {
     private Balance balance;
     private String textFile = "MainFileTxt/speed.txt";
 
+    // pridat drohy loop ktery bude ukladat hru automaticky
+
     public GameLoop(Balance balance) {
         this.balance = balance;
         loadGameSpeed();
