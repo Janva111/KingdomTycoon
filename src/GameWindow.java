@@ -20,8 +20,8 @@ public class GameWindow extends JFrame implements ActionListener {
     private JButton shopButton;
 
 
-    private ImageIcon background = new ImageIcon("GameMap.png");
-    private ImageIcon icon = new ImageIcon("Icon.png");
+    private ImageIcon background = new ImageIcon("MainImages/GameMap.png");
+    private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
 
     private Balance balance;
 
@@ -37,13 +37,13 @@ public class GameWindow extends JFrame implements ActionListener {
         this.balance = balance;
         createWindow();
 
-        this.church = new Church("");
-        this.farm = new Farm("");
-        this.forge = new Forge("");
-        this.fisherman = new Fisherman("");
-        this.library = new Library("");
-        this.lumberjack = new Lumberjack("");
-        this.townHall = new TownHall("");
+        this.church = new Church();
+        this.farm = new Farm();
+        this.forge = new Forge();
+        this.fisherman = new Fisherman();
+        this.library = new Library();
+        this.lumberjack = new Lumberjack();
+        this.townHall = new TownHall();
 
     }
 

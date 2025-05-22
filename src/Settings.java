@@ -13,8 +13,8 @@ public class Settings extends JFrame implements ActionListener {
     private JButton play;
     private JButton quit;
     private JLabel settings;
-    private ImageIcon settings_icon = new ImageIcon("settings.png");
-    private ImageIcon icon = new ImageIcon("Icon.png");
+    private ImageIcon settings_icon = new ImageIcon("MainImages/Settings.png");
+    private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
     private Balance balance;
 
     public Settings(Balance balance) {

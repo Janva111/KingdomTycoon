@@ -12,8 +12,8 @@ public class Menu extends JFrame implements ActionListener {
     private JButton quit;
     private JButton settingsButton;
     private JLabel backgroundMenu;
-    private ImageIcon background = new ImageIcon("Menu.png");
-    private ImageIcon icon = new ImageIcon("Icon.png");
+    private ImageIcon background = new ImageIcon("MainImages/Menu.png");
+    private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
     private Balance balance = new Balance();
 
     public Menu() {

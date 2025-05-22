@@ -11,15 +11,16 @@ public class Shop extends JFrame implements ActionListener {
 
     private JFrame window;
     private JPanel panel;
-    private JButton churchUpgrade
-            , farmUpgrade
-            , fishermanUpgrade
-            , forgeUpgrade
-            , libraryUpgrade
-            , lumberjackUpgrade
-            , townHallUpgrade;
-
-    private ImageIcon icon = new ImageIcon("Icon.png");
+    private JButton churchUpgrade;
+    private JButton farmUpgrade;
+    private JButton fishermanUpgrade;
+    private JButton forgeUpgrade;
+    private JButton libraryUpgrade;
+    private JButton lumberjackUpgrade;
+    private JButton townHallUpgrade;
+    private JButton quitButton;
+    private JButton playButton;
+    private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
 
     private Church church;
     private Farm farm;
@@ -28,6 +29,8 @@ public class Shop extends JFrame implements ActionListener {
     private Library library;
     private Lumberjack lumberjack;
     private TownHall townHall;
+
+    private Balance balance;
 
     public Shop(Church church, Farm farm, Forge forge,Fisherman fisherman, Library library,Lumberjack lumberjack, TownHall townHall) {
         this.church = church;
@@ -137,6 +140,8 @@ public class Shop extends JFrame implements ActionListener {
         return true;
     }
 
+    // aktualizovat furt pres vedlejsi metodu co budu vyvolavat pro aktualizaci treba vytvaret znovu panel
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == farmUpgrade) {
@@ -158,6 +163,12 @@ public class Shop extends JFrame implements ActionListener {
 
         }
         if (e.getSource() == churchUpgrade){
+
+        }
+        if (e.getSource() == playButton) {
+
+        }
+        if (e.getSource() == quitButton) {
 
         }
     }

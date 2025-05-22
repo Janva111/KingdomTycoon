@@ -2,7 +2,14 @@ package Buildings;
 
 public class Farm extends Building {
 
-    public Farm(String filename) {
-        super(filename);
+    private String loadFile ="BuildingParams/FarmParams/Params.txt";
+
+    private String design1 = "BuildingParams/FarmParams/"; // 1-40
+    private String design2 = "BuildingParams/FarmParams/"; // 40-100
+    private String desing3 = "BuildingParams/FarmParams/"; // 101-200
+
+    public Farm() {
+        loadBuilding(loadFile);
+        loadImage(design1,design2,desing3);
     }
 }
