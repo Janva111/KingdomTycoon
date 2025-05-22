@@ -155,6 +155,8 @@ public class Shop extends JFrame implements ActionListener {
         return true;
     }
 
+    // prepsat do jedne metody a tu pak vyvolavat
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == farmUpgrade) {

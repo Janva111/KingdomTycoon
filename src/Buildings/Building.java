@@ -16,6 +16,8 @@ public abstract class Building{
 
     private ImageIcon image;
 
+    //private Balance balance;
+
     public Building() {
     }
 
