@@ -83,7 +83,7 @@ public class Settings extends JFrame implements ActionListener {
         }
         if (e.getSource() == menu) {
             window.dispose();
-            new Menu();
+            new Menu(balance);
         }
     }
 }

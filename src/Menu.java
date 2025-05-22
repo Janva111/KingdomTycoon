@@ -14,9 +14,10 @@ public class Menu extends JFrame implements ActionListener {
     private JLabel backgroundMenu;
     private ImageIcon background = new ImageIcon("MainImages/Menu.png");
     private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
-    private Balance balance = new Balance();
+    private Balance balance;
 
-    public Menu() {
+    public Menu(Balance balance) {
+        this.balance = balance;
         createWindow();
     }
 

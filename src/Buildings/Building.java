@@ -8,15 +8,15 @@ import java.io.IOException;
 
 public abstract class Building{
 
-    private int lvl;
-    private int passiveBoost;
-    private int clickBoost;
-    private int upgradeCost;
-    private int upgradeCostMult;
+    protected int lvl;
+    protected int passiveBoost;
+    protected int clickBoost;
+    protected int upgradeCost;
+    protected int upgradeCostMult;
 
-    private ImageIcon image;
+    protected ImageIcon image;
 
-    //private Balance balance;
+    //protected Balance balance;
 
     public Building() {
     }

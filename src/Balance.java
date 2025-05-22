@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Balance {
 
-    private String textFile = "balance.txt";
+    private String textFile = "MainFileTxt/balance.txt";
 
     private int clickIncome; // 0
     private int passiveIncome; // 1

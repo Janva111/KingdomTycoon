@@ -14,7 +14,7 @@ public class GameLoop {
     private Timer loop;
 
     private Balance balance;
-    private String textFile = "speed.txt";
+    private String textFile = "MainFileTxt/speed.txt";
 
     public GameLoop(Balance balance) {
         this.balance = balance;
