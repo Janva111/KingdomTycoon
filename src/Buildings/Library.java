@@ -11,4 +11,9 @@ public class Library extends Building {
         loadBuilding(loadFile);
         loadImage(design1,design2,desing3);
     }
+
+    public boolean upgrade() {
+        upgradeBuilding(loadFile);
+        return true;
+    }
 }

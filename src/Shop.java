@@ -79,8 +79,18 @@ public class Shop extends JFrame implements ActionListener {
         townHallUpgrade.setForeground(Color.WHITE);
         townHallUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
+        farmUpgrade = new JButton("Farm upgrade: " + farm.getUpgradeCost());
+        farmUpgrade.setBounds(50, 245,SCREEN_WIDTH-100 , 70);
+        farmUpgrade.setOpaque(false);
+        farmUpgrade.setContentAreaFilled(false);
+        farmUpgrade.setFocusable(false);
+        farmUpgrade.addActionListener(this);
+        farmUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        farmUpgrade.setForeground(Color.WHITE);
+
+        farmUpgrade.setHorizontalTextPosition(JButton.CENTER);
         lumberjackUpgrade = new JButton("Lumberjack upgrade: " + lumberjack.getUpgradeCost());
-        lumberjackUpgrade.setBounds(50, 245,SCREEN_WIDTH-100 , 70);
+        lumberjackUpgrade.setBounds(50, 330,SCREEN_WIDTH-100 , 70);
         lumberjackUpgrade.setOpaque(false);
         lumberjackUpgrade.setContentAreaFilled(false);
         lumberjackUpgrade.setFocusable(false);
@@ -89,15 +99,7 @@ public class Shop extends JFrame implements ActionListener {
         lumberjackUpgrade.setForeground(Color.WHITE);
         lumberjackUpgrade.setHorizontalTextPosition(JButton.CENTER);
 
-        farmUpgrade = new JButton("Farm upgrade: " + farm.getUpgradeCost());
-        farmUpgrade.setBounds(50, 330,SCREEN_WIDTH-100 , 70);
-        farmUpgrade.setOpaque(false);
-        farmUpgrade.setContentAreaFilled(false);
-        farmUpgrade.setFocusable(false);
-        farmUpgrade.addActionListener(this);
-        farmUpgrade.setFont(new Font("Arial Black", Font.PLAIN, 20));
-        farmUpgrade.setForeground(Color.WHITE);
-        farmUpgrade.setHorizontalTextPosition(JButton.CENTER);
+
 
         fishermanUpgrade = new JButton("Fisherman upgrade: " + fisherman.getUpgradeCost());
         fishermanUpgrade.setBounds(50, 415,SCREEN_WIDTH-100 , 70);
@@ -175,78 +177,39 @@ public class Shop extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == farmUpgrade) {
             if(balance.getActualBalance()>farm.getUpgradeCost() ) {
-                farm.addLvl();
-                farm.setUpgradeCost();
-                balance.subtractBalance(farm.getUpgradeCost());
-                balance.addPassiveIncome(farm.getPassiveBoost());
-                balance.addClickIncome(farm.getClickBoost());
-
+                farm.upgrade();
             }
         }
         if (e.getSource() == fishermanUpgrade) {
             if (balance.getActualBalance()>fisherman.getUpgradeCost()) {
-                balance.subtractBalance(fisherman.getUpgradeCost());
-                fisherman.addLvl();
-                fisherman.setUpgradeCost();
-                balance.subtractBalance(fisherman.getUpgradeCost());
-                balance.addPassiveIncome(fisherman.getPassiveBoost());
-                balance.addClickIncome(fisherman.getClickBoost());
-
+                fisherman.upgrade();
             }
         }
         if (e.getSource() == forgeUpgrade) {
             if (balance.getActualBalance()>forge.getUpgradeCost()) {
-                balance.subtractBalance(forge.getUpgradeCost());
-                forge.addLvl();
-                forge.setUpgradeCost();
-                balance.subtractBalance(forge.getUpgradeCost());
-                balance.addPassiveIncome(forge.getPassiveBoost());
-                balance.addClickIncome(forge.getClickBoost());
-
+                forge.upgrade();
             }
         }
         if (e.getSource() == libraryUpgrade) {
             if (balance.getActualBalance()>library.getUpgradeCost()) {
-                balance.subtractBalance(library.getUpgradeCost());
-                library.addLvl();
-                library.setUpgradeCost();
-                balance.subtractBalance(library.getUpgradeCost());
-                balance.addPassiveIncome(library.getPassiveBoost());
-                balance.addClickIncome(library.getClickBoost());
+                library.upgrade();
 
             }
         }
         if (e.getSource() == lumberjackUpgrade) {
             if (balance.getActualBalance()>lumberjack.getUpgradeCost()) {
-                balance.subtractBalance(lumberjack.getUpgradeCost());
-                lumberjack.addLvl();
-                lumberjack.setUpgradeCost();
-                balance.subtractBalance(lumberjack.getUpgradeCost());
-                balance.addPassiveIncome(lumberjack.getPassiveBoost());
-                balance.addClickIncome(lumberjack.getClickBoost());
+                lumberjack.upgrade();
 
             }
         }
         if (e.getSource() == townHallUpgrade) {
             if (balance.getActualBalance()>townHall.getUpgradeCost()) {
-                balance.subtractBalance(townHall.getUpgradeCost());
-                townHall.addLvl();
-                townHall.setUpgradeCost();
-                balance.subtractBalance(townHall.getUpgradeCost());
-                balance.addPassiveIncome(townHall.getPassiveBoost());
-                balance.addClickIncome(townHall.getClickBoost());
-
+                townHall.upgrade();
             }
         }
         if (e.getSource() == churchUpgrade){
             if (balance.getActualBalance()>church.getUpgradeCost()) {
-                balance.subtractBalance(church.getUpgradeCost());
-                church.addLvl();
-                church.setUpgradeCost();
-                balance.subtractBalance(church.getUpgradeCost());
-                balance.addPassiveIncome(church.getPassiveBoost());
-                balance.addClickIncome(church.getClickBoost());
-
+                church.upgrade();
             }
         }
         if (e.getSource() == playButton) {

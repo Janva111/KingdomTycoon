@@ -69,10 +69,6 @@ public class Menu extends JFrame implements ActionListener {
         return true;
     }
 
-    public Balance getBalance() {
-        return balance;
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == playButton) {

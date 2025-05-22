@@ -18,8 +18,8 @@ public class Main {
              svůj postup výměnou za speciální měnu. Ta poskytuje trvalé vylepšení příjmů a další výhody.
          */
 
-        Balance b = new Balance();
-        Menu menu = new Menu(b);
-        GameLoop gameLoop = new GameLoop(b);
+        Balance balance = new Balance();
+        Menu menu = new Menu(balance);
+        GameLoop gameLoop = new GameLoop(balance);
     }
 }

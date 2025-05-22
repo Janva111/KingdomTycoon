@@ -4,7 +4,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Balance {
-
     private String textFile = "MainFileTxt/balance.txt";
 
     private int clickIncome; // 0
@@ -14,6 +13,7 @@ public class Balance {
     public Balance() {
         loadBalance();
     }
+
 
     public boolean loadBalance(){
         try {
