@@ -102,10 +102,10 @@ public class GameWindow extends JFrame implements ActionListener {
         clickButton.setBorderPainted(false);
         clickButton.addActionListener(this);
 
-        balanceLabel = new JLabel("Balance: " + balance.getActualBalance() + " ⚔");
-        balanceLabel.setFont(new Font("Arial Black", Font.PLAIN, 40));
+        balanceLabel = new JLabel("Coins: " + balance.getActualBalance());
+        balanceLabel.setFont(new Font("Arial Black", Font.PLAIN, 20));
         balanceLabel.setForeground(Color.WHITE);
-        balanceLabel.setBounds(10, 10, 300, 60);
+        balanceLabel.setBounds(10, 10, 600, 40);
 
         map = new JLabel(background);
         map.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
