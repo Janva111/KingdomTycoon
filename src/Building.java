@@ -1,8 +1,5 @@
 import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public abstract class Building {
 
@@ -26,10 +23,20 @@ public abstract class Building {
         setUpgradeCost();
         balance.addClickIncome(clickBoost);
         balance.addPassiveIncome(passiveBoost);
-
-        // prepsat soubor Params dane budovy
+        save(filename);
 
         return true;
+    }
+
+    public boolean save(String filename) {
+        try {
+            FileWriter writer = new FileWriter(filename, false);
+            writer.write(String.valueOf(lvl)+";"+ String.valueOf(passiveBoost)+";"+ String.valueOf(clickBoost)+";"+ String.valueOf(upgradeCostMult));
+            writer.close();
+            return true;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean loadBuilding(String filename) {

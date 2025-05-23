@@ -2,10 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class GameLoop {
 
@@ -13,7 +10,6 @@ public class GameLoop {
     private static int delay;
 
     private Timer loop;
-    private JLabel balanceLabel;
 
     private Balance balance;
     private String textFile = "MainFileTxt/speed.txt";
@@ -27,10 +23,12 @@ public class GameLoop {
             @Override
             public void actionPerformed(ActionEvent e) {
                 balance.addBalance(balance.getPassiveIncome());
+                balance.save();
             }
         });
         loop.start();
     }
+
 
     public boolean loadGameSpeed() {
         try {

@@ -50,7 +50,8 @@ public class GameWindow extends JFrame implements ActionListener {
         this.lumberjack = new Lumberjack(balance);
         this.townHall = new TownHall(balance);
         createWindow();
-        Timer refreshTimer = new Timer(1000, e -> {
+
+        Timer refreshTimer = new Timer(60, e -> {
             balanceLabel.setText("Coins: " + balance.getActualBalance());
             churchPlace.setIcon(church.getImage());
             farmPlace.setIcon(farm.getImage());

@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Balance {
     private String textFile = "MainFileTxt/balance.txt";
@@ -14,6 +11,16 @@ public class Balance {
         loadBalance();
     }
 
+    public boolean save(){
+        try {
+            FileWriter writer = new FileWriter(textFile, false);
+            writer.write(String.valueOf(clickIncome)+";"+ String.valueOf(passiveIncome)+";"+ String.valueOf(actualBalance));
+            writer.close();
+            return true;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public boolean loadBalance() {
         try {
