@@ -37,8 +37,8 @@ public class GameLoop {
 
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(";");
-                setFPS(Integer.parseInt(split[0]));
-                setDelay(Integer.parseInt(split[1]));
+                FPS =(Integer.parseInt(split[0]));
+                delay =(Integer.parseInt(split[1]));
 
             }
             return true;
@@ -47,13 +47,5 @@ public class GameLoop {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static void setFPS(int FPS) {
-        GameLoop.FPS = FPS;
-    }
-
-    public static void setDelay(int delay) {
-        GameLoop.delay = delay;
     }
 }

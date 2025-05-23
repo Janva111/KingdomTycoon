@@ -29,9 +29,9 @@ public class Balance {
 
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(";");
-                setClickIncome(Integer.parseInt(split[0]));
-                setPassiveIncome(Integer.parseInt(split[1]));
-                setActualBalance(Integer.parseInt(split[2]));
+                clickIncome=(Integer.parseInt(split[0]));
+                passiveIncome=(Integer.parseInt(split[1]));
+                actualBalance=(Integer.parseInt(split[2]));
             }
             return true;
         } catch (FileNotFoundException e) {

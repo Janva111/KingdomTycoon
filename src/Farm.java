@@ -2,9 +2,9 @@ public class Farm extends Building {
 
     private String loadFile = "BuildingParams/FarmParams/Params.txt";
 
-    private String design1 = "BuildingParams/FarmParams/"; // 1-40
-    private String design2 = "BuildingParams/FarmParams/"; // 40-100
-    private String desing3 = "BuildingParams/FarmParams/"; // 101-200
+    private String design1 = "BuildingParams/FarmParams/";
+    private String design2 = "BuildingParams/FarmParams/";
+    private String desing3 = "BuildingParams/FarmParams/";
 
     public Farm(Balance balance) {
         super(balance);

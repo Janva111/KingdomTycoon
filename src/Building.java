@@ -10,7 +10,7 @@ public abstract class Building {
     protected int upgradeCostMult;
 
     protected ImageIcon image;
-    private Balance balance;
+    protected Balance balance;
 
     public Building(Balance balance) {
         this.balance = balance;
@@ -63,16 +63,16 @@ public abstract class Building {
     }
 
     public int loadImage(String filename1, String filename2, String filename3) {
-        if (getLvl() <= 40 && getLvl() >= 0) {
+        if (getLvl() <= 60 && getLvl() > 0) {
             image = new ImageIcon(filename1);
             return 1;
         }
-        if (getLvl() > 20 && getLvl() < 100) {
+        if (getLvl() > 60 && getLvl() <= 150) {
             image = new ImageIcon(filename2);
             setImage(image);
             return 2;
         }
-        if (getLvl() > 100 && getLvl() < 200) {
+        if (getLvl() >= 151) {
             image = new ImageIcon(filename3);
             setImage(image);
             return 3;
@@ -90,6 +90,10 @@ public abstract class Building {
 
     public void setUpgradeCost() {
         this.upgradeCost = upgradeCostMult * lvl + upgradeCostMult;
+    }
+
+    public void setLvl(int lvl) { // unit test
+        this.lvl = lvl;
     }
 
     public int getUpgradeCost() {

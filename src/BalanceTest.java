@@ -9,4 +9,11 @@ class BalanceTest {
         Balance balance = new Balance();
         assertTrue(balance.loadBalance());
     }
+
+    @Test
+    void save() {
+        Balance balance = new Balance();
+        assertTrue(balance.save());
+    }
+
 }

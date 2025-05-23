@@ -2,9 +2,9 @@ public class Church extends Building {
 
     private String loadFile ="BuildingParams/ChurchParams/Params.txt";
 
-    private String design1 = "BuildingParams/ChurchParams/"; // 1-40
-    private String design2 = "BuildingParams/ChurchParams/"; // 40-100
-    private String desing3 = "BuildingParams/ChurchParams/"; // 101-200
+    private String design1 = "BuildingParams/ChurchParams/";
+    private String design2 = "BuildingParams/ChurchParams/";
+    private String desing3 = "BuildingParams/ChurchParams/";
 
     public Church(Balance balance) {
         super(balance);

@@ -2,9 +2,9 @@ public class Fisherman extends Building {
 
     private String loadFile = "BuildingParams/FishermanParams/Params.txt";
 
-    private String design1 = "BuildingParams/FishermanParams/"; // 1-40
-    private String design2 = "BuildingParams/FishermanParams/"; // 40-100
-    private String desing3 = "BuildingParams/FishermanParams/"; // 101-200
+    private String design1 = "BuildingParams/FishermanParams/";
+    private String design2 = "BuildingParams/FishermanParams/";
+    private String desing3 = "BuildingParams/FishermanParams/";
 
     public Fisherman(Balance balance) {
         super(balance);
