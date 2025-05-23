@@ -53,8 +53,13 @@ public class GameWindow extends JFrame implements ActionListener {
 
         Timer refreshTimer = new Timer(1000, e -> {
             balanceLabel.setText("Coins: " + balance.getActualBalance());
-            // dopsat
-            lumberjack.setImage(lumberjack.getImage());
+            churchPlace = new JLabel(church.getImage());
+            forgePlace = new JLabel(forge.getImage());
+            farmPlace = new JLabel(farm.getImage());
+            fishermanPlace = new JLabel(fisherman.getImage());
+            libraryPlace = new JLabel(library.getImage());
+            lumberjackPlace = new JLabel(lumberjack.getImage());
+            townHallPlace = new JLabel(townHall.getImage());
         });
         refreshTimer.start();
     }
@@ -110,25 +115,18 @@ public class GameWindow extends JFrame implements ActionListener {
         map = new JLabel(background);
         map.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-        churchPlace = new JLabel(church.getImage());
         //churchPlace.setBounds();
 
-        forgePlace = new JLabel(forge.getImage());
         //forgePlace.setBounds();
 
-        fishermanPlace = new JLabel(fisherman.getImage());
         //fishermanPlace.setBounds();
 
-        libraryPlace = new JLabel(library.getImage());
         //libraryPlace.setBounds();
 
-        lumberjackPlace = new JLabel(lumberjack.getImage());
         //lumberjackPlace.setBounds();
 
-        townHallPlace = new JLabel(townHall.getImage());
         //townHallPlace.setBounds();
 
-        farmPlace = new JLabel(farm.getImage());
         //farmPlace.setBounds();
 
         panel = new JPanel();
