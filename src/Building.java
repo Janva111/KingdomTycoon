@@ -26,6 +26,7 @@ public abstract class Building {
         setUpgradeCost();
         balance.addClickIncome(clickBoost);
         balance.addPassiveIncome(passiveBoost);
+
         // prepsat soubor Params dane budovy
 
         return true;
