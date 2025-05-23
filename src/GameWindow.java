@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.Menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 
 public class GameWindow extends JFrame implements ActionListener {
@@ -176,6 +178,7 @@ public class GameWindow extends JFrame implements ActionListener {
         if (e.getSource() == clickButton) {
                 balance.addBalance(balance.getClickIncome());
                 coins.setText("Coins: " + balance.getActualBalance());
+                balance.save();
         }
         if (e.getSource() == exitButton) {
             System.exit(0);

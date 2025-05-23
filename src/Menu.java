@@ -11,6 +11,7 @@ public class Menu extends JFrame implements ActionListener {
     private JButton playButton;
     private JButton exitButton;
     private JButton settingsButton;
+    private JButton newGameButton;
     private JLabel backgroundMenu;
     private ImageIcon background = new ImageIcon("MainImages/Menu.png");
     private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
@@ -46,6 +47,14 @@ public class Menu extends JFrame implements ActionListener {
         settingsButton.setHorizontalTextPosition(JButton.CENTER);
         settingsButton.setBorderPainted(false);
 
+        newGameButton = new JButton("New Game");
+        newGameButton.setBounds(SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 + 160, 200, 40);
+        newGameButton.setBackground(Color.WHITE);
+        newGameButton.addActionListener(this);
+        newGameButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        newGameButton.setHorizontalTextPosition(JButton.CENTER);
+        newGameButton.setBorderPainted(false);
+
         backgroundMenu = new JLabel(background);
         backgroundMenu.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
@@ -56,6 +65,7 @@ public class Menu extends JFrame implements ActionListener {
         panel.add(playButton);
         panel.add(exitButton);
         panel.add(settingsButton);
+        panel.add(newGameButton);
         panel.add(backgroundMenu);
 
         window = new JFrame("Kingdom Tycoon | Menu");
@@ -66,6 +76,12 @@ public class Menu extends JFrame implements ActionListener {
         window.setVisible(true);
         window.add(panel);
         window.setIconImage(icon.getImage());
+        return true;
+    }
+
+    public boolean newGame() {
+        // resets all files
+
         return true;
     }
 
@@ -82,6 +98,8 @@ public class Menu extends JFrame implements ActionListener {
         if (e.getSource() == settingsButton) {
             window.dispose();
             new Settings(balance);
+        }
+        if (e.getSource() == newGameButton) {
         }
 
     }
