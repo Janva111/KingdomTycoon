@@ -50,16 +50,15 @@ public class GameWindow extends JFrame implements ActionListener {
         this.lumberjack = new Lumberjack(balance);
         this.townHall = new TownHall(balance);
         createWindow();
-
         Timer refreshTimer = new Timer(1000, e -> {
             balanceLabel.setText("Coins: " + balance.getActualBalance());
-            churchPlace = new JLabel(church.getImage());
-            forgePlace = new JLabel(forge.getImage());
-            farmPlace = new JLabel(farm.getImage());
-            fishermanPlace = new JLabel(fisherman.getImage());
-            libraryPlace = new JLabel(library.getImage());
-            lumberjackPlace = new JLabel(lumberjack.getImage());
-            townHallPlace = new JLabel(townHall.getImage());
+            churchPlace.setIcon(church.getImage());
+            farmPlace.setIcon(farm.getImage());
+            forgePlace.setIcon(forge.getImage());
+            fishermanPlace.setIcon(fisherman.getImage());
+            libraryPlace.setIcon(library.getImage());
+            lumberjackPlace.setIcon(lumberjack.getImage());
+            townHallPlace.setIcon(townHall.getImage());
         });
         refreshTimer.start();
     }
@@ -115,18 +114,25 @@ public class GameWindow extends JFrame implements ActionListener {
         map = new JLabel(background);
         map.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-        //churchPlace.setBounds();
+        churchPlace = new JLabel();
+        churchPlace.setBounds(100,100,100,100);
 
+        forgePlace = new JLabel();
         //forgePlace.setBounds();
 
+        fishermanPlace = new JLabel();
         //fishermanPlace.setBounds();
 
+        libraryPlace = new JLabel();
         //libraryPlace.setBounds();
 
+        lumberjackPlace = new JLabel();
         //lumberjackPlace.setBounds();
 
+        townHallPlace = new JLabel();
         //townHallPlace.setBounds();
 
+        farmPlace = new JLabel();
         //farmPlace.setBounds();
 
         panel = new JPanel();
