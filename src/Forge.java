@@ -1,5 +1,3 @@
-package Buildings;
-
 public class Forge extends Building {
     private String loadFile = "BuildingParams/ForgeParams/Params.txt";
 
@@ -7,7 +5,8 @@ public class Forge extends Building {
     private String design2 = "BuildingParams/ForgeParams/"; // 40-100
     private String desing3 = "BuildingParams/ForgeParams/"; // 101-200
 
-    public Forge() {
+    public Forge(Balance balance) {
+        super(balance);
         loadBuilding(loadFile);
         loadImage(design1, design2, desing3);
     }

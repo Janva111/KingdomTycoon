@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -12,11 +13,12 @@ public class GameLoop {
     private static int delay;
 
     private Timer loop;
+    private JLabel balanceLabel;
 
     private Balance balance;
     private String textFile = "MainFileTxt/speed.txt";
 
-    // pridat drohy loop ktery bude ukladat hru automaticky
+    // pridat druhy loop ktery bude ukladat hru automaticky
 
     public GameLoop(Balance balance) {
         this.balance = balance;
@@ -24,8 +26,7 @@ public class GameLoop {
         loop = new Timer(delay, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                balance.addBalance(balance.getPassiveIncome()); // rework to funktion
-                System.out.println(balance.getActualBalance());// control
+                balance.addBalance(balance.getPassiveIncome());
             }
         });
         loop.start();

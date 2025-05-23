@@ -1,5 +1,3 @@
-package Buildings;
-
 public class Farm extends Building {
 
     private String loadFile = "BuildingParams/FarmParams/Params.txt";
@@ -8,7 +6,8 @@ public class Farm extends Building {
     private String design2 = "BuildingParams/FarmParams/"; // 40-100
     private String desing3 = "BuildingParams/FarmParams/"; // 101-200
 
-    public Farm() {
+    public Farm(Balance balance) {
+        super(balance);
         loadBuilding(loadFile);
         loadImage(design1, design2, desing3);
     }

@@ -1,5 +1,3 @@
-package Buildings;
-
 public class TownHall extends Building {
     private String loadFile = "BuildingParams/TownHallParams/Params.txt";
 
@@ -7,7 +5,8 @@ public class TownHall extends Building {
     private String design2 = "BuildingParams/TownHallParams/"; // 40-100
     private String desing3 = "BuildingParams/TownHallParams/"; // 101-200
 
-    public TownHall() {
+    public TownHall(Balance balance) {
+        super(balance);
         loadBuilding(loadFile);
         loadImage(design1, design2, desing3);
     }

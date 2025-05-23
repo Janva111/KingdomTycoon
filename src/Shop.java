@@ -1,5 +1,3 @@
-import Buildings.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -177,45 +175,45 @@ public class Shop extends JFrame implements ActionListener {
         if (e.getSource() == farmUpgrade) {
             if (balance.getActualBalance() > farm.getUpgradeCost()) {
                 farm.upgrade();
-                balance.loadBalance();
+                farmUpgrade.setText("Farm upgrade: " + farm.getUpgradeCost());
             }
         }
         if (e.getSource() == fishermanUpgrade) {
             if (balance.getActualBalance() > fisherman.getUpgradeCost()) {
                 fisherman.upgrade();
-                balance.loadBalance();
+                fishermanUpgrade.setText("Fisherman upgrade: " + fisherman.getUpgradeCost());
             }
         }
         if (e.getSource() == forgeUpgrade) {
             if (balance.getActualBalance() > forge.getUpgradeCost()) {
                 forge.upgrade();
-                balance.loadBalance();
+                forgeUpgrade.setText("Forge upgrade: " + forge.getUpgradeCost());
             }
         }
         if (e.getSource() == libraryUpgrade) {
             if (balance.getActualBalance() > library.getUpgradeCost()) {
                 library.upgrade();
-                balance.loadBalance();
+                libraryUpgrade.setText("Library upgrade: " + library.getUpgradeCost());
 
             }
         }
         if (e.getSource() == lumberjackUpgrade) {
             if (balance.getActualBalance() > lumberjack.getUpgradeCost()) {
                 lumberjack.upgrade();
-                balance.loadBalance();
+                lumberjackUpgrade.setText("Lumberjack upgrade:" + lumberjack.getUpgradeCost());
 
             }
         }
         if (e.getSource() == townHallUpgrade) {
             if (balance.getActualBalance() > townHall.getUpgradeCost()) {
                 townHall.upgrade();
-                balance.loadBalance();
+                townHallUpgrade.setText("TownHall upgrade: " + townHall.getUpgradeCost());
             }
         }
         if (e.getSource() == churchUpgrade) {
             if (balance.getActualBalance() > church.getUpgradeCost()) {
                 church.upgrade();
-                balance.loadBalance();
+                churchUpgrade.setText("Church upgrade: " + church.getUpgradeCost());
             }
         }
         if (e.getSource() == playButton) {

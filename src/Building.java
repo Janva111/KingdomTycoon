@@ -1,5 +1,3 @@
-package Buildings;
-
 import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -15,43 +13,20 @@ public abstract class Building {
     protected int upgradeCostMult;
 
     protected ImageIcon image;
+    private Balance balance;
 
-    public Building() {
+    public Building(Balance balance) {
+        this.balance = balance;
     }
 
-    //metoda co provede veci ze shopu a prepise soubor hodnot v balance a svou vlastni
+
     public boolean upgradeBuilding(String filename) {
-        String fileBalance = "MainFileTxt/balance.txt";
-        int clickIncome = 0;
-        int passiveIncome = 0;
-        int actualBalance = 0;
-
-
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(fileBalance));
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                String[] split = line.split(";");
-                clickIncome = Integer.parseInt(split[0]);
-                passiveIncome = Integer.parseInt(split[1]);
-                actualBalance = Integer.parseInt(split[2]);
-            }
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        balance.subtractBalance(upgradeCost);
         addLvl();
         setUpgradeCost();
-
-        actualBalance = actualBalance - upgradeCost;
-        clickIncome = clickIncome + clickBoost;
-        passiveIncome = passiveIncome + passiveBoost;
-
-        // prepsat fileBalance - clickIncome;passiveIncome;actualIncome
-        // prepsat building file - lvl, passivBoost, clickBoost, upgradeCostMult
+        balance.addClickIncome(clickBoost);
+        balance.addPassiveIncome(passiveBoost);
+        // prepsat soubor Params dane budovy
 
         return true;
     }

@@ -1,5 +1,3 @@
-package Buildings;
-
 public class Lumberjack extends Building {
     private String loadFile = "BuildingParams/LumberjackParams/Params.txt";
 
@@ -7,7 +5,8 @@ public class Lumberjack extends Building {
     private String design2 = "BuildingParams/LumberjackParams/"; // 40-100
     private String desing3 = "BuildingParams/LumberjackParams/"; // 101-200
 
-    public Lumberjack() {
+    public Lumberjack(Balance balance) {
+        super(balance);
         loadBuilding(loadFile);
         loadImage(design1, design2, desing3);
     }

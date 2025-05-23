@@ -1,5 +1,3 @@
-import Buildings.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Menu;
@@ -25,6 +23,7 @@ public class GameWindow extends JFrame implements ActionListener {
     private JLabel libraryPlace;
     private JLabel lumberjackPlace;
     private JLabel farmPlace;
+    private JLabel balanceLabel;
 
     private ImageIcon background = new ImageIcon("MainImages/GameMap.png");
     private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
@@ -39,19 +38,28 @@ public class GameWindow extends JFrame implements ActionListener {
     private Lumberjack lumberjack;
     private TownHall townHall;
 
+
     public GameWindow(Balance balance) {
         this.balance = balance;
 
-        this.church = new Church();
-        this.farm = new Farm();
-        this.forge = new Forge();
-        this.fisherman = new Fisherman();
-        this.library = new Library();
-        this.lumberjack = new Lumberjack();
-        this.townHall = new TownHall();
+        this.church = new Church(balance);
+        this.farm = new Farm(balance);
+        this.forge = new Forge(balance);
+        this.fisherman = new Fisherman(balance);
+        this.library = new Library(balance);
+        this.lumberjack = new Lumberjack(balance);
+        this.townHall = new TownHall(balance);
         createWindow();
 
+        Timer refreshTimer = new Timer(1000, e -> {
+            balanceLabel.setText("Coins: " + balance.getActualBalance());
+            // dopsat
+            lumberjack.setImage(lumberjack.getImage());
+        });
+        refreshTimer.start();
     }
+
+
 
     public boolean createWindow() {
         exitButton = new JButton("Exit");
@@ -94,6 +102,11 @@ public class GameWindow extends JFrame implements ActionListener {
         clickButton.setBorderPainted(false);
         clickButton.addActionListener(this);
 
+        balanceLabel = new JLabel("Balance: " + balance.getActualBalance() + " ⚔");
+        balanceLabel.setFont(new Font("Arial Black", Font.PLAIN, 40));
+        balanceLabel.setForeground(Color.WHITE);
+        balanceLabel.setBounds(10, 10, 300, 60);
+
         map = new JLabel(background);
         map.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
@@ -134,6 +147,7 @@ public class GameWindow extends JFrame implements ActionListener {
         panel.add(lumberjackPlace);
         panel.add(townHallPlace);
         panel.add(farmPlace);
+        panel.add(balanceLabel);
         panel.add(map);
 
         window = new JFrame("Kingdom Tycoon | Game");
@@ -150,8 +164,8 @@ public class GameWindow extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == clickButton) {
-            balance.addBalance(balance.getClickIncome());// rework to funktion
-            System.out.println(balance.getActualBalance()); // control
+                balance.addBalance(balance.getClickIncome());
+                balanceLabel.setText("Coins: " + balance.getActualBalance());
         }
         if (e.getSource() == exitButton) {
             System.exit(0);
