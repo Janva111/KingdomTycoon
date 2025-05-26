@@ -19,6 +19,7 @@ public abstract class Building {
     /**
      * Upgrades the building: subtracts the upgrade cost from the current balance,
      * increases the level, recalculates the new upgrade cost,
+     * quest reward for lvl 60 and 150,
      * and adds the click and passive income boosts.
      * Then saves the updated building state to a file.
      *
@@ -32,6 +33,10 @@ public abstract class Building {
         balance.addClickIncome(clickBoost * balance.prestigeBoost());
         balance.addPassiveIncome(passiveBoost * balance.prestigeBoost());
         save(filename);
+
+        if (getLvl() == 60 || getLvl() == 150) {
+            balance.addBalance(upgradeCost * balance.prestigeBoost() + 1000);
+        }
 
         return true;
     }
@@ -48,7 +53,7 @@ public abstract class Building {
     public boolean save(String filename) {
         try {
             FileWriter writer = new FileWriter(filename, false);
-            writer.write(String.valueOf(lvl)+";"+ String.valueOf(passiveBoost)+";"+ String.valueOf(clickBoost)+";"+ String.valueOf(upgradeCostMult));
+            writer.write(String.valueOf(lvl) + ";" + String.valueOf(passiveBoost) + ";" + String.valueOf(clickBoost) + ";" + String.valueOf(upgradeCostMult));
             writer.close();
             return true;
         } catch (IOException e) {
@@ -95,8 +100,8 @@ public abstract class Building {
      * @param filename2 Path to the image for levels 61–150.
      * @param filename3 Path to the image for levels 151 and above.
      * @return A number representing which image was used:
-     *         1 (filename1), 2 (filename2), 3 (filename3),
-     *         or 0 if the level is invalid.
+     * 1 (filename1), 2 (filename2), 3 (filename3),
+     * or 0 if the level is invalid.
      */
     public int loadImage(String filename1, String filename2, String filename3) {
         if (getLvl() <= 60 && getLvl() > 0) {

@@ -58,6 +58,16 @@ public class Balance {
 
     }
 
+    /**
+     * Reads the prestige boost value from the `prestigeBoostFile`.
+     * <p>
+     * The file is expected to contain a single line (or the last valid line is used),
+     * with the boost value as the first semicolon-separated field.
+     * </p>
+     *
+     * @return the integer value representing the prestige boost.
+     * @throws RuntimeException if the file is not found or cannot be read.
+     */
     public int prestigeBoost(){
         int boost = 0;
         String line;

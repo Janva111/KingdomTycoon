@@ -101,7 +101,8 @@ public class Menu extends JFrame implements ActionListener {
     }
 
     /**
-     * Starts a new game by resetting relevant game data files.
+     * Starts a new game by resetting relevant game data files
+     * and adds prestige boost;
      * Reads file names and default values from a configuration text file,
      * and overwrites the content in each specified file with default values.
      *
