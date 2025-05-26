@@ -2,9 +2,9 @@ public class Church extends Building {
 
     private String loadFile ="BuildingParams/ChurchParams/Params.txt";
 
-    private String design1 = "BuildingParams/ChurchParams/";
-    private String design2 = "BuildingParams/ChurchParams/";
-    private String desing3 = "BuildingParams/ChurchParams/";
+    private String design1 = "BuildingParams/ChurchParams/ChurchDesign1.png";
+    private String design2 = "BuildingParams/ChurchParams/ChurchDesign2.png";
+    private String desing3 = "BuildingParams/ChurchParams/ChurchDesign3.png";
 
     /**
      * Constructs a building and initializes its state by loading its saved data

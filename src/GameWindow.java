@@ -136,7 +136,7 @@ public class GameWindow extends JFrame implements ActionListener {
         map.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
         churchPlace = new JLabel();
-        churchPlace.setBounds(100,100,100,100);
+        churchPlace.setBounds(100,100,80,103);
 
         forgePlace = new JLabel();
         //forgePlace.setBounds();
@@ -148,13 +148,13 @@ public class GameWindow extends JFrame implements ActionListener {
         //libraryPlace.setBounds();
 
         lumberjackPlace = new JLabel();
-        //lumberjackPlace.setBounds();
+        lumberjackPlace.setBounds(0, 0 , 80,65);
 
         townHallPlace = new JLabel();
         //townHallPlace.setBounds();
 
         farmPlace = new JLabel();
-        //farmPlace.setBounds();
+        farmPlace.setBounds(200,200,100,78);
 
         panel = new JPanel();
         panel.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);

@@ -2,9 +2,9 @@ public class Farm extends Building {
 
     private String loadFile = "BuildingParams/FarmParams/Params.txt";
 
-    private String design1 = "BuildingParams/FarmParams/";
-    private String design2 = "BuildingParams/FarmParams/";
-    private String desing3 = "BuildingParams/FarmParams/";
+    private String design1 = "BuildingParams/FarmParams/FarmDesign1.png";
+    private String design2 = "BuildingParams/FarmParams/FarmDesign2.png";
+    private String desing3 = "BuildingParams/FarmParams/FarmDesign3.png";
 
     /**
      * Constructs a building and initializes its state by loading its saved data

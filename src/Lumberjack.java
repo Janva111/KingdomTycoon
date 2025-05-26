@@ -1,9 +1,9 @@
 public class Lumberjack extends Building {
     private String loadFile = "BuildingParams/LumberjackParams/Params.txt";
 
-    private String design1 = "BuildingParams/LumberjackParams/";
-    private String design2 = "BuildingParams/LumberjackParams/";
-    private String desing3 = "BuildingParams/LumberjackParams/";
+    private String design1 = "BuildingParams/LumberjackParams/LumberjackDesign1.png";
+    private String design2 = "BuildingParams/LumberjackParams/LumberjackDesign2.png";
+    private String desing3 = "BuildingParams/LumberjackParams/LumberjackDesign3.png";
 
     /**
      * Constructs a building and initializes its state by loading its saved data

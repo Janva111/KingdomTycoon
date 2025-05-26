@@ -1,9 +1,9 @@
 public class Library extends Building {
     private String loadFile = "BuildingParams/LibraryParams/Params.txt";
 
-    private String design1 = "BuildingParams/LibraryParams/";
-    private String design2 = "BuildingParams/LibraryParams/";
-    private String desing3 = "BuildingParams/LibraryParams/";
+    private String design1 = "BuildingParams/LibraryParams/LibraryDesign1.png";
+    private String design2 = "BuildingParams/LibraryParams/LibraryDesign2.png";
+    private String desing3 = "BuildingParams/LibraryParams/LibraryDesign3.png";
 
     /**
      * Constructs a building and initializes its state by loading its saved data
