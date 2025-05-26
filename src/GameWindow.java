@@ -145,7 +145,7 @@ public class GameWindow extends JFrame implements ActionListener {
         //fishermanPlace.setBounds();
 
         libraryPlace = new JLabel();
-        //libraryPlace.setBounds();
+        libraryPlace.setBounds(0,0,100,103);
 
         lumberjackPlace = new JLabel();
         lumberjackPlace.setBounds(0, 0 , 80,65);
