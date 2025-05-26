@@ -1,10 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 
 public class GameWindow extends JFrame implements ActionListener {
@@ -90,7 +87,7 @@ public class GameWindow extends JFrame implements ActionListener {
         settingsButton.setHorizontalTextPosition(JButton.CENTER);
         settingsButton.setBorderPainted(false);
 
-        menuButton = new JButton("Menu");
+        menuButton = new JButton("menu");
         menuButton.setBounds(430, 720, 200, 40);
         menuButton.setBackground(Color.WHITE);
         menuButton.addActionListener(this);
@@ -189,7 +186,7 @@ public class GameWindow extends JFrame implements ActionListener {
         }
         if (e.getSource() == menuButton) {
             window.dispose();
-            new Menu();
+            new Menu(balance);
         }
         if (e.getSource() == shopButton) {
             window.dispose();

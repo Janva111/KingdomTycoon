@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 
 public class Menu extends JFrame implements ActionListener {
     public int SCREEN_WIDTH = 1024, SCREEN_HEIGHT = 800;
@@ -13,9 +14,11 @@ public class Menu extends JFrame implements ActionListener {
     private JButton settingsButton;
     private JButton newGameButton;
     private JLabel backgroundMenu;
+    private JLabel newGameText;
     private ImageIcon background = new ImageIcon("MainImages/Menu.png");
     private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
     private Balance balance;
+    private String textFile = "StartGameValues.txt";
 
     public Menu(Balance balance) {
         this.balance = balance;
@@ -55,6 +58,12 @@ public class Menu extends JFrame implements ActionListener {
         newGameButton.setHorizontalTextPosition(JButton.CENTER);
         newGameButton.setBorderPainted(false);
 
+        newGameText = new JLabel(balance.newGameText());
+        newGameText.setFont(new Font("Arial Black", Font.PLAIN, 40));
+        newGameText.setForeground(Color.RED);
+        newGameText.setBounds(SCREEN_WIDTH / 2 - 125, SCREEN_HEIGHT / 2 + 20, 400, 60);
+        newGameText.setHorizontalTextPosition(JButton.CENTER);
+
         backgroundMenu = new JLabel(background);
         backgroundMenu.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
@@ -66,6 +75,7 @@ public class Menu extends JFrame implements ActionListener {
         panel.add(exitButton);
         panel.add(settingsButton);
         panel.add(newGameButton);
+        panel.add(newGameText);
         panel.add(backgroundMenu);
 
         window = new JFrame("Kingdom Tycoon | Menu");
@@ -80,9 +90,40 @@ public class Menu extends JFrame implements ActionListener {
     }
 
     public boolean newGame() {
-        // resets all files
+        String filename;
+        String value1;
+        String value2;
+        String value3;
+        String value4;
 
-        return true;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(textFile));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                String[] split = line.split(";");
+
+                    filename = split[0];
+                    value1 = split[1];
+                    value2 = split[2];
+                    value3 = split[3];
+                    value4 = split[4];
+
+                    try {
+                        FileWriter writer = new FileWriter(filename, false);
+                        writer.write(value1 + ";" + value2 + ";" + value3 + ";" + value4);
+                        writer.close();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+            }
+            return true;
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -100,6 +141,9 @@ public class Menu extends JFrame implements ActionListener {
             new Settings(balance);
         }
         if (e.getSource() == newGameButton) {
+            window.dispose();
+            newGame();
+            new Start();
         }
 
     }

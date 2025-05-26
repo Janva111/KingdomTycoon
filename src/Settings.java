@@ -9,9 +9,9 @@ public class Settings extends JFrame implements ActionListener {
 
     private JPanel panel;
     private JFrame window;
-    private JButton menu;
-    private JButton play;
-    private JButton quit;
+    private JButton menuButton;
+    private JButton playButton;
+    private JButton quitButton;
     private JLabel settings;
     private ImageIcon settings_icon = new ImageIcon("MainImages/Settings.png");
     private ImageIcon icon = new ImageIcon("MainImages/Icon.png");
@@ -24,29 +24,29 @@ public class Settings extends JFrame implements ActionListener {
 
     public boolean createWindow() {
 
-        menu = new JButton("Menu");
-        menu.setBounds(SCREEN_WIDTH / 2 + 150, SCREEN_HEIGHT - 100, 200, 40);
-        menu.setBackground(Color.WHITE);
-        menu.addActionListener(this);
-        menu.setFont(new Font("Arial Black", Font.PLAIN, 20));
-        menu.setHorizontalTextPosition(JButton.CENTER);
-        menu.setBorderPainted(false);
+        menuButton = new JButton("Menu");
+        menuButton.setBounds(SCREEN_WIDTH / 2 + 150, SCREEN_HEIGHT - 100, 200, 40);
+        menuButton.setBackground(Color.WHITE);
+        menuButton.addActionListener(this);
+        menuButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        menuButton.setHorizontalTextPosition(JButton.CENTER);
+        menuButton.setBorderPainted(false);
 
-        play = new JButton("Play");
-        play.setBounds(SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT - 100, 200, 40);
-        play.setBackground(Color.WHITE);
-        play.addActionListener(this);
-        play.setFont(new Font("Arial Black", Font.PLAIN, 20));
-        play.setHorizontalTextPosition(JButton.CENTER);
-        play.setBorderPainted(false);
+        playButton = new JButton("Play");
+        playButton.setBounds(SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT - 100, 200, 40);
+        playButton.setBackground(Color.WHITE);
+        playButton.addActionListener(this);
+        playButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        playButton.setHorizontalTextPosition(JButton.CENTER);
+        playButton.setBorderPainted(false);
 
-        quit = new JButton("Quit");
-        quit.setBounds(SCREEN_WIDTH / 2 - 350, SCREEN_HEIGHT - 100, 200, 40);
-        quit.setBackground(Color.WHITE);
-        quit.addActionListener(this);
-        quit.setFont(new Font("Arial Black", Font.PLAIN, 20));
-        quit.setHorizontalTextPosition(JButton.CENTER);
-        quit.setBorderPainted(false);
+        quitButton = new JButton("Quit");
+        quitButton.setBounds(SCREEN_WIDTH / 2 - 350, SCREEN_HEIGHT - 100, 200, 40);
+        quitButton.setBackground(Color.WHITE);
+        quitButton.addActionListener(this);
+        quitButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
+        quitButton.setHorizontalTextPosition(JButton.CENTER);
+        quitButton.setBorderPainted(false);
 
         settings = new JLabel(settings_icon);
         settings.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -56,9 +56,9 @@ public class Settings extends JFrame implements ActionListener {
         panel.setBackground(Color.BLUE);
         panel.setLayout(null);
         panel.setVisible(true);
-        panel.add(play);
-        panel.add(quit);
-        panel.add(menu);
+        panel.add(playButton);
+        panel.add(quitButton);
+        panel.add(menuButton);
         panel.add(settings);
 
         window = new JFrame("Kingdom Tycoon | Settings");
@@ -74,15 +74,14 @@ public class Settings extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == quit) {
+        if (e.getSource() == quitButton) {
             System.exit(0);
-
         }
-        if (e.getSource() == play) {
+        if (e.getSource() == playButton) {
             window.dispose();
             new GameWindow(balance);
         }
-        if (e.getSource() == menu) {
+        if (e.getSource() == menuButton) {
             window.dispose();
             new Menu(balance);
         }

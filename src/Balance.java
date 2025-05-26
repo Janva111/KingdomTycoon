@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.*;
 
 public class Balance {
@@ -40,6 +41,13 @@ public class Balance {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public String newGameText(){
+        if (clickIncome == 1 && passiveIncome == 0 && actualBalance == 0) {
+            return "New Game";
+        }
+        return "";
     }
 
 
