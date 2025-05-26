@@ -20,14 +20,36 @@
       <element id="file-copy" path="$PROJECT_DIR$/MainImages/Settings.png" />
       <element id="file-copy" path="$PROJECT_DIR$/MainImages/Shop.png" />
       <element id="file-copy" path="$PROJECT_DIR$/MainFileTxt/balance.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/MainFileTxt/prestigeBoost.txt" />
       <element id="file-copy" path="$PROJECT_DIR$/MainFileTxt/speed.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/ChurchParams/ChurchDesign1.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/ChurchParams/ChurchDesign2.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/ChurchParams/ChurchDesign3.png" />
       <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/ChurchParams/Params.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/FarmParams/FarmDesign1.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/FarmParams/FarmDesign2.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/FarmParams/FarmDesign3.png" />
       <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/FarmParams/Params.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/FishermanParams/FishermanDesign1.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/FishermanParams/FishermanDesign2.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/FishermanParams/FishermanDesign3.png" />
       <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/FishermanParams/Params.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/ForgeParams/ForgeDesign2.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/ForgeParams/ForgeDesign3.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/ForgeParams/ForgeDesing1.png" />
       <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/ForgeParams/Params.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/LibraryParams/LibraryDesign1.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/LibraryParams/LibraryDesign2.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/LibraryParams/LibraryDesign3.png" />
       <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/LibraryParams/Params.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/LumberjackParams/LumberjackDesign1.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/LumberjackParams/LumberjackDesign2.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/LumberjackParams/LumberjackDesign3.png" />
       <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/LumberjackParams/Params.txt" />
       <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/TownHallParams/Params.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/TownHallParams/TownHallDesign1.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/TownHallParams/TownHallDesign2.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/BuildingParams/TownHallParams/TownHallDesign3.png" />
     </root>
   </artifact>
 </component>
