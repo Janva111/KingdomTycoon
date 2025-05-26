@@ -14,6 +14,13 @@ public class GameLoop {
     private Balance balance;
     private String textFile = "MainFileTxt/speed.txt";
 
+    /**
+     * Creates a new GameLoop instance that periodically adds passive income to the balance
+     * and saves the current game state at a fixed interval defined by the game speed settings.
+     *
+     * @param balance The Balance object that holds the player's financial state.
+     *                This object is updated regularly by the game loop.
+     */
     public GameLoop(Balance balance) {
         this.balance = balance;
         loadGameSpeed();
@@ -28,6 +35,13 @@ public class GameLoop {
     }
 
 
+    /**
+     * Loads the game speed configuration (frames per second and delay between updates)
+     * from a predefined text file and sets the corresponding values.
+     *
+     * @return {@code true} if the configuration was successfully loaded.
+     * @throws RuntimeException if the file is not found or an I/O error occurs.
+     */
     public boolean loadGameSpeed() {
         try {
             BufferedReader br = new BufferedReader(new FileReader(textFile));

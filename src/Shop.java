@@ -33,6 +33,20 @@ public class Shop extends JFrame implements ActionListener {
 
     private Balance balance;
 
+    /**
+     * Constructs the Shop window where the player can upgrade buildings.
+     * Initializes references to all upgradeable buildings and creates the UI.
+     * Also starts a timer to refresh the coin balance periodically.
+     *
+     * @param church      The Church building instance.
+     * @param farm        The Farm building instance.
+     * @param forge       The Forge building instance.
+     * @param fisherman   The Fisherman building instance.
+     * @param library     The Library building instance.
+     * @param lumberjack  The Lumberjack building instance.
+     * @param townHall    The TownHall building instance.
+     * @param balance     The Balance instance tracking the player's coins.
+     */
     public Shop(Church church, Farm farm, Forge forge, Fisherman fisherman, Library library, Lumberjack lumberjack, TownHall townHall, Balance balance) {
         this.balance = balance;
 
@@ -45,13 +59,19 @@ public class Shop extends JFrame implements ActionListener {
         this.townHall = townHall;
 
         createWindow();
+        // refreshTimer - chatGPT
         Timer refreshTimer = new Timer(60, e -> {
             refresh();
         });
         refreshTimer.start();
     }
 
-
+    /**
+     * Creates and configures the main Shop window where users can upgrade buildings.
+     * Sets up all buttons, labels, layout, and background.
+     *
+     * @return {@code true} if the shop window was successfully created.
+     */
     public boolean createWindow() {
 
         exitButton = new JButton("Exit");
@@ -176,11 +196,30 @@ public class Shop extends JFrame implements ActionListener {
         return true;
     }
 
+    /**
+     * Refreshes the displayed coin balance label with the current value from the Balance object.
+     *
+     * @return {@code true} if the coin label was successfully refreshed.
+     */
     public boolean refresh() {
         coins.setText("Coins: " + balance.getActualBalance());
         return true;
     }
 
+    /**
+     * Handles button click events for all shop upgrades and controls.
+     * Each upgrade button checks whether the player has enough coins,
+     * performs the upgrade, updates the button text, and refreshes the coin display.
+     *
+     * Additional button actions:
+     *
+     * Continue – closes the Shop window and resumes the game.
+     * Exit – closes the application.
+     * "Building"Upgrade - The upgrade button text is updated to reflect the new level and cost
+     * , building get upgraded and costLabel will refresh.
+     *
+     * @param e The ActionEvent triggered by a button click.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == farmUpgrade) {

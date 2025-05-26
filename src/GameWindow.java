@@ -37,7 +37,11 @@ public class GameWindow extends JFrame implements ActionListener {
     private Lumberjack lumberjack;
     private TownHall townHall;
 
-
+    /**
+     * Constructs the main game window and initializes all game buildings and UI components.
+     *
+     * @param balance The Balance object that holds and manages the player's financial data.
+     */
     public GameWindow(Balance balance) {
         this.balance = balance;
 
@@ -53,7 +57,14 @@ public class GameWindow extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * Starts a refresh timer that periodically updates the display of the player's coin balance
+     * and refreshes the icons of all building components in the UI.
+     *
+     * @return {@code true} if the refresh timer was successfully started.
+     */
     public boolean refresh(){
+        // refreshTimer - chatGPT
         Timer refreshTimer = new Timer(60, e -> {
             coins.setText("Coins: " + balance.getActualBalance());
             churchPlace.setIcon(church.getImage());
@@ -69,7 +80,12 @@ public class GameWindow extends JFrame implements ActionListener {
     }
 
 
-
+    /**
+     * Creates and sets up the entire game window, including buttons, labels,
+     * building placeholders, and layout. Also initializes the main game panel and frame.
+     *
+     * @return {@code true} if the window was successfully created.
+     */
     public boolean createWindow() {
         exitButton = new JButton("Exit");
         exitButton.setBounds(10, 720, 200, 40);
@@ -170,6 +186,16 @@ public class GameWindow extends JFrame implements ActionListener {
         return true;
     }
 
+    /**
+     * Handles all button click events in the game window.
+     *
+     * If the click button is pressed, adds click income to the balance and save game.
+     * If the exit button is pressed, closes the application.
+     * If the settings, menu, or shop buttons are pressed, opens the respective windows and closes the current one.
+     *
+     *
+     * @param e The ActionEvent triggered by a user interaction.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == clickButton) {

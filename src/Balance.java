@@ -12,6 +12,13 @@ public class Balance {
         loadBalance();
     }
 
+    /**
+     * Saves the current game state (click income, passive income, and actual balance)
+     * to a predefined text file.
+     *
+     * @return {@code true} if the save operation was successful.
+     * @throws RuntimeException if an I/O error occurs during writing.
+     */
     public boolean save(){
         try {
             FileWriter writer = new FileWriter(textFile, false);
@@ -23,6 +30,13 @@ public class Balance {
         }
     }
 
+    /**
+     * Loads the game state (click income, passive income, and actual balance)
+     * from a predefined text file.
+     *
+     * @return {@code true} if the load operation was successful.
+     * @throws RuntimeException if the file is not found or an I/O error occurs.
+     */
     public boolean loadBalance() {
         try {
             BufferedReader br = new BufferedReader(new FileReader(textFile));
@@ -43,6 +57,12 @@ public class Balance {
 
     }
 
+    /**
+     * Checks whether the current game state matches the default values for a new game.
+     *
+     * @return The string "New Game" if the game is in its initial state,
+     *         otherwise an empty string.
+     */
     public String newGameText(){
         if (clickIncome == 1 && passiveIncome == 0 && actualBalance == 0) {
             return "New Game";

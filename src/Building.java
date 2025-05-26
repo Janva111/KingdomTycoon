@@ -16,7 +16,15 @@ public abstract class Building {
         this.balance = balance;
     }
 
-
+    /**
+     * Upgrades the building: subtracts the upgrade cost from the current balance,
+     * increases the level, recalculates the new upgrade cost,
+     * and adds the click and passive income boosts.
+     * Then saves the updated building state to a file.
+     *
+     * @param filename The name of the file where the building data should be saved.
+     * @return {@code true} if the upgrade was successful.
+     */
     public boolean upgradeBuilding(String filename) {
         balance.subtractBalance(upgradeCost);
         addLvl();
@@ -28,6 +36,15 @@ public abstract class Building {
         return true;
     }
 
+
+    /**
+     * Saves the current building state (level, passive boost, click boost, upgrade cost multiplier)
+     * to the specified file.
+     *
+     * @param filename The name of the file to save the data to.
+     * @return {@code true} if the save was successful.
+     * @throws RuntimeException if an I/O error occurs during writing.
+     */
     public boolean save(String filename) {
         try {
             FileWriter writer = new FileWriter(filename, false);
@@ -39,6 +56,14 @@ public abstract class Building {
         }
     }
 
+    /**
+     * Loads the building state (level, passive boost, click boost, upgrade cost multiplier)
+     * from the specified file and applies the values.
+     *
+     * @param filename The name of the file to load the data from.
+     * @return {@code true} if the load was successful.
+     * @throws RuntimeException if the file is not found or an I/O error occurs.
+     */
     public boolean loadBuilding(String filename) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
@@ -62,6 +87,17 @@ public abstract class Building {
         }
     }
 
+
+    /**
+     * Loads and sets the image of the building based on the current level.
+     *
+     * @param filename1 Path to the image for levels 1–60.
+     * @param filename2 Path to the image for levels 61–150.
+     * @param filename3 Path to the image for levels 151 and above.
+     * @return A number representing which image was used:
+     *         1 (filename1), 2 (filename2), 3 (filename3),
+     *         or 0 if the level is invalid.
+     */
     public int loadImage(String filename1, String filename2, String filename3) {
         if (getLvl() <= 60 && getLvl() > 0) {
             image = new ImageIcon(filename1);

@@ -20,11 +20,22 @@ public class Menu extends JFrame implements ActionListener {
     private Balance balance;
     private String textFile = "StartGameValues.txt";
 
+    /**
+     * Constructs the main menu of the game, initializing the window and UI elements.
+     *
+     * @param balance The Balance object that stores the player's current game data.
+     */
     public Menu(Balance balance) {
         this.balance = balance;
         createWindow();
     }
 
+    /**
+     * Initializes and displays the main menu window, including buttons for:
+     * Play, Quit, Settings, and New Game. Also sets up labels and layout.
+     *
+     * @return {@code true} if the menu window was successfully created.
+     */
     public boolean createWindow() {
         playButton = new JButton("Play");
         playButton.setBounds(SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 + 80, 200, 40);
@@ -89,6 +100,14 @@ public class Menu extends JFrame implements ActionListener {
         return true;
     }
 
+    /**
+     * Starts a new game by resetting relevant game data files.
+     * Reads file names and default values from a configuration text file,
+     * and overwrites the content in each specified file with default values.
+     *
+     * @return {@code true} if the new game data was successfully written.
+     * @throws RuntimeException if the file is not found or an I/O error occurs.
+     */
     public boolean newGame() {
         String filename;
         String value1;
@@ -126,6 +145,17 @@ public class Menu extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Handles menu button actions:
+     *
+     * Play – opens the game window.
+     * Quit – exits the application.
+     * Settings – opens the settings window.
+     * New Game – resets save data and starts a new game.
+     *
+     *
+     * @param e The ActionEvent triggered by user interaction.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == playButton) {
