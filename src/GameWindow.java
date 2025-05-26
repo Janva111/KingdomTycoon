@@ -136,25 +136,25 @@ public class GameWindow extends JFrame implements ActionListener {
         map.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
         churchPlace = new JLabel();
-        churchPlace.setBounds(100,100,80,103);
+        churchPlace.setBounds(530,190,80,103);
 
         forgePlace = new JLabel();
-        //forgePlace.setBounds();
+        //forgePlace.setBounds(690,292,);
 
         fishermanPlace = new JLabel();
-        //fishermanPlace.setBounds();
+        fishermanPlace.setBounds(730,520,90,66);
 
         libraryPlace = new JLabel();
-        libraryPlace.setBounds(0,0,100,103);
+        libraryPlace.setBounds(400,600,100,103);
 
         lumberjackPlace = new JLabel();
-        lumberjackPlace.setBounds(0, 0 , 80,65);
+        lumberjackPlace.setBounds(285,51, 80,65);
 
         townHallPlace = new JLabel();
-        //townHallPlace.setBounds();
+        //townHallPlace.setBounds(427,316);
 
         farmPlace = new JLabel();
-        farmPlace.setBounds(200,200,100,78);
+        farmPlace.setBounds(140,450,100,78);
 
         panel = new JPanel();
         panel.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);

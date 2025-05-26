@@ -2,9 +2,9 @@ public class Fisherman extends Building {
 
     private String loadFile = "BuildingParams/FishermanParams/Params.txt";
 
-    private String design1 = "BuildingParams/FishermanParams/";
-    private String design2 = "BuildingParams/FishermanParams/";
-    private String desing3 = "BuildingParams/FishermanParams/";
+    private String design1 = "BuildingParams/FishermanParams/FishermanDesign1.png";
+    private String design2 = "BuildingParams/FishermanParams/FishermanDesign2.png";
+    private String desing3 = "BuildingParams/FishermanParams/FishermanDesign3.png";
 
     /**
      * Constructs a building and initializes its state by loading its saved data

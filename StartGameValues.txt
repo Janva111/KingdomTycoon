@@ -1,8 +1,8 @@
 MainFileTxt/balance.txt;1;0;0;0
-BuildingParams/ChurchParams/params.txt;0;0;0;0
-BuildingParams/FarmParams/params.txt;0;0;0;0
-BuildingParams/FishermanParams/params.txt;0;0;0;0
-BuildingParams/ForgeParams/params.txt;0;0;0;0
-BuildingParams/LibraryParams/params.txt;0;0;0;0
-BuildingParams/LumberjackParams/params.txt;0;0;0;0
-BuildingParams/TownHallParams/params.txt;0;0;0;0
+BuildingParams/ChurchParams/params.txt;0;158;300;1500
+BuildingParams/FarmParams/params.txt;0;2;3;10
+BuildingParams/FishermanParams/params.txt;0;10;24;190
+BuildingParams/ForgeParams/params.txt;0;30;56;590
+BuildingParams/LibraryParams/params.txt;0;86;100;1000
+BuildingParams/LumberjackParams/params.txt;0;5;12;60
+BuildingParams/TownHallParams/params.txt;1;50;200;560
