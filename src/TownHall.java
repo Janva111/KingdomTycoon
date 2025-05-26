@@ -1,9 +1,9 @@
 public class TownHall extends Building {
     private String loadFile = "BuildingParams/TownHallParams/Params.txt";
 
-    private String design1 = "BuildingParams/TownHallParams/";
-    private String design2 = "BuildingParams/TownHallParams/";
-    private String desing3 = "BuildingParams/TownHallParams/";
+    private String design1 = "BuildingParams/TownHallParams/TownHallDesign1.png";
+    private String design2 = "BuildingParams/TownHallParams/TownHallDesign2.png";
+    private String desing3 = "BuildingParams/TownHallParams/TownHallDesign3.png";
 
     /**
      * Constructs a building and initializes its state by loading its saved data

@@ -29,8 +29,8 @@ public abstract class Building {
         balance.subtractBalance(upgradeCost);
         addLvl();
         setUpgradeCost();
-        balance.addClickIncome(clickBoost);
-        balance.addPassiveIncome(passiveBoost);
+        balance.addClickIncome(clickBoost * balance.prestigeBoost());
+        balance.addPassiveIncome(passiveBoost * balance.prestigeBoost());
         save(filename);
 
         return true;

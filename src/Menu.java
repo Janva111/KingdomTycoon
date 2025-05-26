@@ -108,12 +108,15 @@ public class Menu extends JFrame implements ActionListener {
      * @return {@code true} if the new game data was successfully written.
      * @throws RuntimeException if the file is not found or an I/O error occurs.
      */
+
     public boolean newGame() {
         String filename;
-        String value1;
-        String value2;
-        String value3;
-        String value4;
+        int value1;
+        int value2;
+        int value3;
+        int value4;
+        int prestigeBoostCount = 0;
+        String prestigeBoostFile = balance.getPrestigeBoostFile();
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(textFile));
@@ -123,11 +126,14 @@ public class Menu extends JFrame implements ActionListener {
                 String[] split = line.split(";");
 
                     filename = split[0];
-                    value1 = split[1];
-                    value2 = split[2];
-                    value3 = split[3];
-                    value4 = split[4];
+                    value1 = Integer.parseInt(split[1]);
+                    value2 = Integer.parseInt(split[2]);
+                    value3 = Integer.parseInt(split[3]);
+                    value4 = Integer.parseInt(split[4]);
 
+                    if (value1 >= 200){
+                        prestigeBoostCount++;
+                    }
                     try {
                         FileWriter writer = new FileWriter(filename, false);
                         writer.write(value1 + ";" + value2 + ";" + value3 + ";" + value4);
@@ -135,8 +141,17 @@ public class Menu extends JFrame implements ActionListener {
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
-
             }
+            prestigeBoostCount = prestigeBoostCount + balance.prestigeBoost();
+            try {
+                FileWriter writer = new FileWriter(prestigeBoostFile, false);
+                writer.write(String.valueOf(prestigeBoostCount));
+                writer.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+
             return true;
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

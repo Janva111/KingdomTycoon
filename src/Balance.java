@@ -3,6 +3,7 @@ import java.io.*;
 
 public class Balance {
     private String textFile = "MainFileTxt/balance.txt";
+    private String prestigeBoostFile = "MainFileTxt/prestigeBoost.txt";
 
     private int clickIncome; // 0
     private int passiveIncome; // 1
@@ -44,9 +45,9 @@ public class Balance {
 
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(";");
-                clickIncome=(Integer.parseInt(split[0]));
-                passiveIncome=(Integer.parseInt(split[1]));
-                actualBalance=(Integer.parseInt(split[2]));
+                clickIncome=(Integer.parseInt(split[0])) * prestigeBoost();
+                passiveIncome=(Integer.parseInt(split[1]) * prestigeBoost());
+                actualBalance=(Integer.parseInt(split[2]) * prestigeBoost());
             }
             return true;
         } catch (FileNotFoundException e) {
@@ -55,6 +56,23 @@ public class Balance {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public int prestigeBoost(){
+        int boost = 0;
+        String line;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(prestigeBoostFile));
+            while ((line = br.readLine()) != null) {
+                String[] split = line.split(";");
+                boost = Integer.parseInt(split[0]);
+            }
+            return boost;
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
@@ -109,5 +127,9 @@ public class Balance {
 
     public int getActualBalance() {
         return actualBalance;
+    }
+
+    public String getPrestigeBoostFile() {
+        return prestigeBoostFile;
     }
 }

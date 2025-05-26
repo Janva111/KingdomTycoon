@@ -1,9 +1,9 @@
 public class Forge extends Building {
     private String loadFile = "BuildingParams/ForgeParams/Params.txt";
 
-    private String design1 = "BuildingParams/ForgeParams/"; // 1-40
-    private String design2 = "BuildingParams/ForgeParams/";
-    private String desing3 = "BuildingParams/ForgeParams/";
+    private String design1 = "BuildingParams/ForgeParams/ForgeDesign1.png"; // 1-40
+    private String design2 = "BuildingParams/ForgeParams/ForgeDesing2.png";
+    private String desing3 = "BuildingParams/ForgeParams/ForgeDesign3.png";
 
     /**
      * Constructs a building and initializes its state by loading its saved data
