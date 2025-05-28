@@ -35,7 +35,7 @@ public abstract class Building {
         save(filename);
 
         if (getLvl() == 60 || getLvl() == 150) {
-            balance.addBalance(upgradeCost * balance.prestigeBoost() + 1000);
+            balance.addBalance(upgradeCost * balance.prestigeBoost() * 1000);
         }
 
         return true;
