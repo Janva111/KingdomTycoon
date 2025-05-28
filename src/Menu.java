@@ -116,7 +116,7 @@ public class Menu extends JFrame implements ActionListener {
         int value2;
         int value3;
         int value4;
-        int prestigeBoostCount = 0;
+        int prestigeBoostCount = -1;
         String prestigeBoostFile = balance.getPrestigeBoostFile();
 
         try {
